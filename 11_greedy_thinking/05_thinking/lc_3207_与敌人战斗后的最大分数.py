@@ -1,0 +1,51 @@
+# 3207. 与敌人战斗后的最大分数
+'''
+给你一个下标从 0 开始的整数数组 enemyEnergies ，它表示一个下标从 0 开始的敌人能量数组。
+
+同时给你一个整数 currentEnergy ，它表示你一开始拥有的能量值总量。
+
+你一开始的分数为 0 ，且一开始所有的敌人都未标记。
+
+你可以通过以下操作 之一 任意次（也可以 0 次）来得分：
+
+ 选择一个 未标记 且满足 currentEnergy >= enemyEnergies[i] 的敌人 i 。在这个操作中：
+
+ 
+ 你会获得 1 分。
+
+ 你的能量值减少 enemyEnergies[i] ，也就是说 currentEnergy = currentEnergy - enemyEnergies[i] 。
+
+ 
+ 
+
+ 如果你目前 至少 有 1 分，你可以选择一个 未标记 的敌人 i 。在这个操作中：
+ 
+ 你的能量值增加 enemyEnergies[i] ，也就是说 currentEnergy = currentEnergy + enemyEnergies[i] 。
+
+ 敌人 i 被标记 。
+
+ 
+ 
+
+请你返回通过以上操作，最多 可以获得多少分。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def maximumPoints(self, enemyEnergies, currentEnergy):
+        """
+        :type enemyEnergies: List[int]
+        :type currentEnergy: int
+        :rtype: int
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

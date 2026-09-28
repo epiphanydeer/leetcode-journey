@@ -1,0 +1,59 @@
+# 963. 最小面积矩形 II
+'''
+给你一个 X-Y 平面上的点数组 points，其中 points[i] = [xi, yi]。
+
+返回由这些点形成的任意矩形的最小面积，矩形的边 不一定 平行于 X 轴和 Y 轴。如果不存在这样的矩形，则返回 0。
+
+答案只需在10-5 的误差范围内即可被视作正确答案。
+
+ 
+
+示例 1：
+
+输入： points = [[1,2],[2,1],[1,0],[0,1]]
+输出： 2.00000
+解释： 最小面积矩形由 [1,2]、[2,1]、[1,0]、[0,1] 组成，其面积为 2。
+
+示例 2：
+
+输入： points = [[0,1],[2,1],[1,1],[1,0],[2,0]]
+输出： 1.00000
+解释： 最小面积矩形由 [1,0]、[1,1]、[2,1]、[2,0] 组成，其面积为 1。
+
+示例 3：
+
+输入： points = [[0,3],[1,2],[3,1],[1,3],[2,1]]
+输出： 0
+解释： 无法由这些点组成任何矩形。
+
+ 
+
+提示：
+
+ 1 <= points.length <= 50
+
+ points[i].length == 2
+
+ 0 <= xi, yi <= 4 * 104
+
+ 所有给定的点都是 唯一 的。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def minAreaFreeRect(self, points):
+        """
+        :type points: List[List[int]]
+        :rtype: float
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

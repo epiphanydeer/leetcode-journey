@@ -1,0 +1,35 @@
+# 1345. 跳跃游戏 IV
+'''
+给你一个整数数组 arr ，你一开始在数组的第一个元素处（下标为 0）。
+
+每一步，你可以从下标 i 跳到下标 i + 1 、i - 1 或者 j ：
+
+ i + 1 需满足：i + 1 < arr.length
+
+ i - 1 需满足：i - 1 >= 0
+
+ j 需满足：arr[i] == arr[j] 且 i != j
+
+请你返回到达数组最后一个元素的下标处所需的 最少操作次数 。
+
+注意：任何时候你都不能跳到数组外面。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def minJumps(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

@@ -1,0 +1,29 @@
+# 1467. 两个盒子中球的颜色数相同的概率
+'''
+桌面上有 2n 个颜色不完全相同的球，球的颜色共有 k 种。给你一个大小为 k 的整数数组 balls ，其中 balls[i] 是颜色为 i 的球的数量。
+
+所有的球都已经 随机打乱顺序 ，前 n 个球放入第一个盒子，后 n 个球放入另一个盒子（请认真阅读示例 2 的解释部分）。
+
+注意：这两个盒子是不同的。例如，两个球颜色分别为 a 和 b，盒子分别为 [] 和 ()，那么 [a] (b) 和 [b] (a) 这两种分配方式是不同的（请认真阅读示例的解释部分）。
+
+请返回「两个盒子中球的颜色数相同」的情况的概率。答案与真实值误差在 10-5 以内，则被视为正确答案
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def getProbability(self, balls):
+        """
+        :type balls: List[int]
+        :rtype: float
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

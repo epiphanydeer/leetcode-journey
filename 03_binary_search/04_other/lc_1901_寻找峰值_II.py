@@ -1,0 +1,29 @@
+# 1901. 寻找峰值 II
+'''
+一个 2D 网格中的 峰值 是指那些 严格大于 其相邻格子(上、下、左、右)的元素。
+
+给你一个 从 0 开始编号 的 m x n 矩阵 mat ，其中任意两个相邻格子的值都 不相同 。找出 任意一个 峰值 mat[i][j] 并 返回其位置 [i,j] 。
+
+你可以假设整个矩阵周边环绕着一圈值为 -1 的格子。
+
+要求必须写出时间复杂度为 O(m log(n)) 或 O(n log(m)) 的算法
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def findPeakGrid(self, mat):
+        """
+        :type mat: List[List[int]]
+        :rtype: List[int]
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

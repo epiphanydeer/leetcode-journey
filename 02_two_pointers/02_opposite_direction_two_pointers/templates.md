@@ -1,21 +1,9 @@
-# 02. Two Pointers / 02_opposite_direction_two_pointers
+# 相向双指针解题模板 (opposite_direction_two_pointers)
 
-## 解题记录
+> **核心思想**：两个指针 left=0, right=n−1，从数组的两端开始，向中间移动。
 
-- 题号与链接：
-- 核心思路：
-- 不变量 / 状态定义：
-- 时间复杂度：
-- 空间复杂度：
-- 边界用例：
+---
 
-## Python 起手模板
-
-```python
-def solve(nums):
-    left, right = 0, len(nums) - 1
-    while left < right:
-        # compare/process nums[left] and nums[right]
-        # move one or both pointers according to the invariant
-        pass
-```
+## 1. 定长滑动窗口
+* **特征**：题目要求一个固定长的窗口（长度为k）。
+* **口诀**：一个骨架通吃：入 → 更新 → 出。

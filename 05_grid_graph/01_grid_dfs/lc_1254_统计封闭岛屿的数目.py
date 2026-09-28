@@ -1,0 +1,25 @@
+# 1254. 统计封闭岛屿的数目
+'''
+二维矩阵 grid 由 0 （土地）和 1 （水）组成。岛是由最大的4个方向连通的 0 组成的群，封闭岛是一个 完全 由1包围（左、上、右、下）的岛。
+
+请返回 封闭岛屿 的数目。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def closedIsland(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

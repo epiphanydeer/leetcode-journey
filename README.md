@@ -13,7 +13,7 @@ Personal repository for tracking algorithm practice, patterns, and templates bas
 
 | Topic | Status | Completed / Target | Notes & Templates |
 | :-- | :--: | --: | :-- |
-| [**01. Sliding Window**](./01_sliding_window/) | In Progress | 12 / 106 | [Templates](./01_sliding_window/README.md) |
+| [**01. Sliding Window**](./01_sliding_window/) | In Progress | 8 / 106 | [Templates](./01_sliding_window/README.md) |
 | [**02. Two Pointers**](./02_two_pointers/) | In Progress | 0 / 180 | [Templates](./02_two_pointers/README.md) |
 | [**03. Binary Search**](./03_binary_search/) | Pending | 0 / 138 | [Templates](./03_binary_search/README.md) |
 | [**04. Monotonic Stack**](./04_monotonic_stack/) | Pending | 0 / 63 | [Templates](./04_monotonic_stack/README.md) |
