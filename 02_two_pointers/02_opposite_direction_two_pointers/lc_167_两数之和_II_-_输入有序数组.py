@@ -1,5 +1,5 @@
 # 167. 两数之和 II - 输入有序数组
-'''
+"""
 给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列。
 
 请你从数组中找出满足相加之和等于目标数 target 的 两个 数。令这两个数分别是 numbers[index1] 和 numbers[index2] ，其中 1 <= index1 < index2 <= numbers.length 。
@@ -10,14 +10,10 @@
 
 你所设计的解决方案必须只使用常数级的额外空间。
 
- 
-
 示例 1：
-
 输入：numbers = [2,7,11,15], target = 9
 输出：[1,2]
 解释：2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。
-
 示例 2：
 
 输入：numbers = [2,3,4], target = 6
@@ -29,21 +25,11 @@
 输入：numbers = [-1,0], target = -1
 输出：[1,2]
 解释：-1 与 0 之和等于目标数 -1 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。
-
- 
-
-提示：
-
- 2 <= numbers.length <= 3 * 104
-
- -1000 <= numbers[i] <= 1000
-
- numbers 按 非递减顺序 排列
-
- -1000 <= target <= 1000
-
- 仅存在一个有效答案
-'''
+【解题思路】
+1. 既然是非递减的顺序，那右边比左边大，只需要找比target - num[left]刚好大一点点的数
+2. 同理如果没找到就再找，把左指针加1，继续去看右边的符合的
+3. 也就是看两个指针的和大了，就移动大的指针，小了，就移动小的指针。
+"""
 
 from typing import *
 from collections import *
@@ -53,6 +39,7 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def twoSum(self, numbers, target):
         """
@@ -60,7 +47,17 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            if target - numbers[left] < numbers[right]:
+                right -= 1
+            elif target - numbers[left] > numbers[right]:
+                left += 1
+            else:
+                return [left + 1, right + 1]
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.twoSum(numbers=[-1, 0], target=-1))
