@@ -23,17 +23,16 @@ import heapq
 
 class Solution(object):
     def threeSumClosest(self, nums: List[int], target: int) -> int:
-        ans = inf
         nums.sort()
         n = len(nums)
+        ans = inf
         for i in range(n - 2):
-            left = i + 1
-            right = n - 1
+            left, right = i + 1, n - 1
             while left < right:
-                x = i + nums[left] + nums[left]
+                x = nums[i] + nums[left] + nums[right]
                 if x == target:
                     return target
-                if abs(target - x) < abs(ans - target):
+                if abs(x - target) < abs(target - ans):
                     ans = x
                 if x > target:
                     right -= 1
