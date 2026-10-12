@@ -1,0 +1,27 @@
+# Preserved legacy solutions
+
+- `01_sliding_window\01_fixed_size\lc_1343_大小为_K_且平均值大于等于阈值的子数组数目.py`
+- `01_sliding_window\01_fixed_size\lc_1423_可获得的最大点数.py`
+- `01_sliding_window\01_fixed_size\lc_1456_定长子串中元音的最大数目.py`
+- `01_sliding_window\01_fixed_size\lc_2090_半径为_k_的子数组平均值.py`
+- `01_sliding_window\01_fixed_size\lc_2379_得到_K_个黑块的最少涂色次数.py`
+- `01_sliding_window\01_fixed_size\lc_2461_长度为_K_子数组中的最大和.py`
+- `01_sliding_window\01_fixed_size\lc_2841_几乎唯一子数组的最大和.py`
+- `01_sliding_window\01_fixed_size\lc_643_子数组最大平均数_I.py`
+- `01_sliding_window\02_variable_longest\lc_1004_最大连续1的个数_III.py`
+- `01_sliding_window\02_variable_longest\lc_1208_尽可能使字符串相等.py`
+- `01_sliding_window\02_variable_longest\lc_1493_删掉一个元素以后全为_1_的最长子数组.py`
+- `01_sliding_window\02_variable_longest\lc_2024_考试的最大困扰度.py`
+- `01_sliding_window\02_variable_longest\lc_2958_最多_K_个重复元素的最长子数组.py`
+- `01_sliding_window\02_variable_longest\lc_3090_每个字符最多出现两次的最长子字符串.py`
+- `01_sliding_window\02_variable_longest\lc_3634_使数组平衡的最少移除数目.py`
+- `01_sliding_window\02_variable_longest\lc_3_无重复字符的最长子串.py`
+- `01_sliding_window\02_variable_longest\lc_904_水果成篮.py`
+- `01_sliding_window\03_variable_shortest\lc_209_长度最小的子数组.py`
+- `01_sliding_window\03_variable_shortest\lc_2904_最短且字典序最小的美丽子字符串.py`
+- `01_sliding_window\03_variable_shortest\lc_3795_不同元素和至少为_K_的最短子数组长度.py`
+- `01_sliding_window\04_subarray_count\lc_1358_包含所有三种字符的子字符串数目.py`
+- `01_sliding_window\04_subarray_count\lc_3258_统计满足_K_约束的子字符串数量_I.py`
+- `01_sliding_window\04_subarray_count\lc_713_乘积小于_K_的子数组.py`
+- `01_sliding_window\04_subarray_count\lc_930_和相同的二元子数组.py`
+- `03_data_structures\05_prefix_sum_hash_map\lc_930_和相同的二元子数组.py`

@@ -1,10 +1,14 @@
-# 滑动窗口专题解题模板 (Sliding Window Patterns)
+# Fixed-Size Sliding Window Template
 
-> **核心思想**：固定长滑块，只需要右指针遍历，左指针是确定的。
+Use the problem-specific `class Solution` signature in each exercise file. Keep
+the reusable state and invariant for this pattern here as you learn it.
 
----
+```python
+from typing import *
 
-## 1. 定长滑动窗口
-* **特征**：题目要求一个固定长的窗口（长度为k）。
-* **口诀**：一个骨架通吃：入 → 更新 → 出。
 
+class Solution:
+    def solve(self, *args, **kwargs):
+        # Define the invariant, update state, then return the answer.
+        pass
+```

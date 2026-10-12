@@ -1,9 +1,14 @@
-# 相向双指针解题模板 (opposite_direction_two_pointers)
+# Opposite-Direction Two Pointers Template
 
-> **核心思想**：两个指针 left=0, right=n−1，从数组的两端开始，向中间移动。
+Use the problem-specific `class Solution` signature in each exercise file. Keep
+the reusable state and invariant for this pattern here as you learn it.
 
----
+```python
+from typing import *
 
-## 1. 定长滑动窗口
-* **特征**：题目要求一个固定长的窗口（长度为k）。
-* **口诀**：一个骨架通吃：入 → 更新 → 出。
+
+class Solution:
+    def solve(self, *args, **kwargs):
+        # Define the invariant, update state, then return the answer.
+        pass
+```

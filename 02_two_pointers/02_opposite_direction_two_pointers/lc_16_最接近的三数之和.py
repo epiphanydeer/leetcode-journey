@@ -8,8 +8,10 @@
 
 假定每组输入只存在 恰好 一个解。
 【解题思路】
-1. 固定第一个数，然后俩指针分别从右边第一个和最后一个开始遍历，
-参考之前的方法，排序，比大小，大了就缩小右指针，反之同理。
+1. 固定一个元素，剩下俩元素用双指针去遍历
+2. 接近，就是看ans 和 目前数字之间的距离（绝对值）
+3. 单调性判断：当移动某个指针导致状态发生改变后，先前被排除掉的元素，
+有没有可能在后面的轮次里重新变成合法解？ 没有
 """
 
 from typing import *
@@ -22,17 +24,20 @@ import heapq
 
 
 class Solution(object):
-    def threeSumClosest(self, nums: List[int], target: int) -> int:
+    def threeSumClosest(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         nums.sort()
-        n = len(nums)
         ans = inf
+        n = len(nums)
         for i in range(n - 2):
             left, right = i + 1, n - 1
             while left < right:
                 x = nums[i] + nums[left] + nums[right]
-                if x == target:
-                    return target
-                if abs(x - target) < abs(target - ans):
+                if abs(x - target) < abs(ans - target):
                     ans = x
                 if x > target:
                     right -= 1
@@ -44,4 +49,4 @@ class Solution(object):
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.threeSumClosest(nums=[-1, 2, 1, -4], target=1))
+    print(solution.threeSumClosest(nums=[0, 0, 0], target=1))

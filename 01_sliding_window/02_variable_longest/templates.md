@@ -1,12 +1,14 @@
-# 不定长滑动窗口专题解题模板 (Sliding Window Patterns)
+# Variable-Size Window: Longest / Maximum Template
 
-> **核心思想**：不定长滑块，需要判断左指针什么时候走
+Use the problem-specific `class Solution` signature in each exercise file. Keep
+the reusable state and invariant for this pattern here as you learn it.
 
----
+```python
+from typing import *
 
-## 1. 不定长滑动窗口（求最大）
-* **特征**：题目要求一个最大长度。
-* **口诀**：不合格了才开始缩左边界，窗口越长越好，所以while判断只要不合适了就开始缩左指针
-while 判断的是当不符合条件的时候，
-合法的状态在 while 外面,所以 ans = max(ans, right - left + 1) 写在 while 外面.
 
+class Solution:
+    def solve(self, *args, **kwargs):
+        # Define the invariant, update state, then return the answer.
+        pass
+```

@@ -1,72 +1,34 @@
 # 3823. 反转一个字符串里的字母后反转特殊字符
-'''
+"""
 给你一个由小写英文字母和特殊字符组成的字符串 s。
-
 你的任务是 按顺序 执行以下操作：
-
  反转小写字母，并将它们放回原来字母所占据的位置。
-
  反转特殊字符，并将它们放回原来特殊字符所占据的位置。
-
 返回执行反转操作后的结果字符串。
-
- 
-
 示例 1：
-
 输入： s = ")ebc#da@f("
-
 输出： "(fad@cb#e)"
-
 解释：
-
  字符串中的字母为 ['e', 'b', 'c', 'd', 'a', 'f']：
-
- 
  反转它们得到 ['f', 'a', 'd', 'c', 'b', 'e']
-
  s 变为 ")fad#cb@e("
-
- 
- 
-
  字符串中的特殊字符为 [')', '#', '@', '(']：
- 
  反转它们得到 ['(', '@', '#', ')']
-
  s 变为 "(fad@cb#e)"
-
- 
- 
-
 示例 2：
-
 输入： s = "z"
-
 输出： "z"
-
 解释：
-
 字符串仅包含一个字母，反转它不会改变字符串。没有特殊字符。
-
 示例 3：
-
 输入： s = "!@#$%^&*()"
-
 输出： ")(*&^%$#@!"
-
 解释：
-
 字符串不包含字母。字符串全部由特殊字符组成，因此反转特殊字符即反转整个字符串。
 
- 
-
-提示：
-
- 1 <= s.length <= 100
-
- s 仅由小写英文字母和 "!@#$%^&*()" 中的特殊字符组成。
-'''
+【解题思路】
+1. 双指针，做两次翻转，先字母再字符
+"""
 
 from typing import *
 from collections import *
@@ -76,13 +38,36 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def reverseByType(self, s):
         """
         :type s: str
         :rtype: str
         """
+        ans = list(s)
+        left, right = 0, len(s) - 1
+        while left < right:
+            while left < right and ans[left].islower():
+                left += 1
+            while left < right and ans[right].islower():
+                right -= 1
+            ans[left], ans[right] = ans[right], ans[left]
+            left += 1
+            right -= 1
+        left, right = 0, len(s) - 1
+        while left < right:
+            while left < right and not (ans[left].islower()):
+                left += 1
+            while left < right and not (ans[right].islower()):
+                right -= 1
+            ans[left], ans[right] = ans[right], ans[left]
+            left += 1
+            right -= 1
+        return "".join(ans)
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.reverseByType(s=")ebc#da@f("))

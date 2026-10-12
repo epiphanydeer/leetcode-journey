@@ -1,0 +1,25 @@
+# 面试题 17.25. 单词矩阵
+'''
+给定一份单词的清单，设计一个算法，创建由字母组成的面积最大的矩形，其中每一行组成一个单词(自左向右)，每一列也组成一个单词(自上而下)。不要求这些单词在清单里连续出现，但要求所有行等长，所有列等高。
+
+如果有多个面积最大的矩形，输出任意一个均可。一个单词可以重复使用。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def maxRectangle(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()
