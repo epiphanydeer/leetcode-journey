@@ -1,0 +1,31 @@
+# 2572. 无平方子集计数
+'''
+给你一个正整数数组 nums 。
+
+如果数组 nums 的子集中的元素乘积是一个 无平方因子数 ，则认为该子集是一个 无平方 子集。
+
+无平方因子数 是无法被除 1 之外任何平方数整除的数字。
+
+返回数组 nums 中 无平方 且 非空 的子集数目。因为答案可能很大，返回对 109 + 7 取余的结果。
+
+nums 的 非空子集 是可以由删除 nums 中一些元素（可以不删除，但不能全部删除）得到的一个数组。如果构成两个子集时选择删除的下标不同，则认为这两个子集不同。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def squareFreeSubsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

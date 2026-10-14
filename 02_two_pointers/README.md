@@ -46,13 +46,16 @@ This core-route collection contains every public problem in the selected section
 | 18 | [四数之和](https://leetcode.cn/problems/4sum/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_18_四数之和.py>) |
 | 1577 | [数的平方等于两数乘积的方法数](https://leetcode.cn/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_1577_数的平方等于两数乘积的方法数.py>) |
 | 3862 | [找出最小平衡下标](https://leetcode.cn/problems/find-the-smallest-balanced-index/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_3862_找出最小平衡下标.py>) |
+| 611 | [有效三角形的个数](https://leetcode.cn/problems/valid-triangle-number/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_611_有效三角形的个数.py>) |
 | 923 | [三数之和的多种可能](https://leetcode.cn/problems/3sum-with-multiplicity/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_923_三数之和的多种可能.py>) |
+| 2563 | [统计公平数对的数目](https://leetcode.cn/problems/count-the-number-of-fair-pairs/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_2563_统计公平数对的数目.py>) |
 | 948 | [令牌放置](https://leetcode.cn/problems/bag-of-tokens/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_948_令牌放置.py>) |
 | 11 | [盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_11_盛最多水的容器.py>) |
 | 42 | [接雨水](https://leetcode.cn/problems/trapping-rain-water/) | Hard | [Python](<./02_opposite_direction_two_pointers/lc_42_接雨水.py>) |
 | 1616 | [分割两个字符串得到回文串](https://leetcode.cn/problems/split-two-strings-to-make-palindrome/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_1616_分割两个字符串得到回文串.py>) |
 | 1498 | [满足条件的子序列数目](https://leetcode.cn/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_1498_满足条件的子序列数目.py>) |
 | 1782 | [统计点对的数目](https://leetcode.cn/problems/count-pairs-of-nodes/) | Hard | [Python](<./02_opposite_direction_two_pointers/lc_1782_统计点对的数目.py>) |
+| 1861 | [旋转盒子](https://leetcode.cn/problems/rotating-the-box/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_1861_旋转盒子.py>) |
 | 3814 | [预算下的最大总容量](https://leetcode.cn/problems/maximum-capacity-within-budget/) | Medium | [Python](<./02_opposite_direction_two_pointers/lc_3814_预算下的最大总容量.py>) |
 
 ## Same-Direction Two Pointers
@@ -61,8 +64,8 @@ This core-route collection contains every public problem in the selected section
 
 | ID | Problem | Difficulty | Solution |
 | :--: | :-- | :--: | :--: |
-| 611 | [有效三角形的个数](https://leetcode.cn/problems/valid-triangle-number/) | Medium | [Python](<./03_same_direction_two_pointers/lc_611_有效三角形的个数.py>) |
 | 2200 | [找出数组中的所有 K 近邻下标](https://leetcode.cn/problems/find-all-k-distant-indices-in-an-array/) | Easy | [Python](<./03_same_direction_two_pointers/lc_2200_找出数组中的所有_K_近邻下标.py>) |
+| 611 | [有效三角形的个数](https://leetcode.cn/problems/valid-triangle-number/) | Medium | [Python](<./03_same_direction_two_pointers/lc_611_有效三角形的个数.py>) |
 | 3649 | [完美对的数目](https://leetcode.cn/problems/number-of-perfect-pairs/) | Medium | [Python](<./03_same_direction_two_pointers/lc_3649_完美对的数目.py>) |
 | 1871 | [跳跃游戏 VII](https://leetcode.cn/problems/jump-game-vii/) | Medium | [Python](<./03_same_direction_two_pointers/lc_1871_跳跃游戏_VII.py>) |
 | 1574 | [删除最短的子数组使剩余数组有序](https://leetcode.cn/problems/shortest-subarray-to-be-removed-to-make-array-sorted/) | Medium | [Python](<./03_same_direction_two_pointers/lc_1574_删除最短的子数组使剩余数组有序.py>) |
@@ -70,74 +73,6 @@ This core-route collection contains every public problem in the selected section
 | 2122 | [还原原数组](https://leetcode.cn/problems/recover-the-original-array/) | Hard | [Python](<./03_same_direction_two_pointers/lc_2122_还原原数组.py>) |
 | 2234 | [花园的最大总美丽值](https://leetcode.cn/problems/maximum-total-beauty-of-the-gardens/) | Hard | [Python](<./03_same_direction_two_pointers/lc_2234_花园的最大总美丽值.py>) |
 | 581 | [最短无序连续子数组](https://leetcode.cn/problems/shortest-unsorted-continuous-subarray/) | Medium | [Python](<./03_same_direction_two_pointers/lc_581_最短无序连续子数组.py>) |
-
-## Three Pointers
-
-[Templates](./09_three_pointers/templates.md)
-
-| ID | Problem | Difficulty | Solution |
-| :--: | :-- | :--: | :--: |
-| 2563 | [统计公平数对的数目](https://leetcode.cn/problems/count-the-number-of-fair-pairs/) | Medium | [Python](<./09_three_pointers/lc_2563_统计公平数对的数目.py>) |
-| 2367 | [等差三元组的数目](https://leetcode.cn/problems/number-of-arithmetic-triplets/) | Easy | [Python](<./09_three_pointers/lc_2367_等差三元组的数目.py>) |
-| 795 | [区间子数组个数](https://leetcode.cn/problems/number-of-subarrays-with-bounded-maximum/) | Medium | [Python](<./09_three_pointers/lc_795_区间子数组个数.py>) |
-| 2444 | [统计定界子数组的数目](https://leetcode.cn/problems/count-subarrays-with-fixed-bounds/) | Hard | [Python](<./09_three_pointers/lc_2444_统计定界子数组的数目.py>) |
-| 3347 | [执行操作后元素的最高频率 II](https://leetcode.cn/problems/maximum-frequency-of-an-element-after-performing-operations-ii/) | Hard | [Python](<./09_three_pointers/lc_3347_执行操作后元素的最高频率_II.py>) |
-| 3464 | [正方形上的点之间的最大距离](https://leetcode.cn/problems/maximize-the-distance-between-points-on-a-square/) | Hard | [Python](<./09_three_pointers/lc_3464_正方形上的点之间的最大距离.py>) |
-
-## Grouped Iteration
-
-[Templates](./10_grouped_iteration/templates.md)
-
-| ID | Problem | Difficulty | Solution |
-| :--: | :-- | :--: | :--: |
-| 1861 | [旋转盒子](https://leetcode.cn/problems/rotating-the-box/) | Medium | [Python](<./10_grouped_iteration/lc_1861_旋转盒子.py>) |
-| 2273 | [移除字母异位词后的结果数组](https://leetcode.cn/problems/find-resultant-array-after-removing-anagrams/) | Easy | [Python](<./10_grouped_iteration/lc_2273_移除字母异位词后的结果数组.py>) |
-| 485 | [最大连续 1 的个数](https://leetcode.cn/problems/max-consecutive-ones/) | Easy | [Python](<./10_grouped_iteration/lc_485_最大连续_1_的个数.py>) |
-| 1446 | [连续字符](https://leetcode.cn/problems/consecutive-characters/) | Easy | [Python](<./10_grouped_iteration/lc_1446_连续字符.py>) |
-| 1869 | [哪种连续子字符串更长](https://leetcode.cn/problems/longer-contiguous-segments-of-ones-than-zeros/) | Easy | [Python](<./10_grouped_iteration/lc_1869_哪种连续子字符串更长.py>) |
-| 4038 | [计算单个区间中出现的整数数量](https://leetcode.cn/problems/count-integers-appearing-in-a-single-block/) | Easy | [Python](<./10_grouped_iteration/lc_4038_计算单个区间中出现的整数数量.py>) |
-| 2414 | [最长的字母序连续子字符串的长度](https://leetcode.cn/problems/length-of-the-longest-alphabetical-continuous-substring/) | Medium | [Python](<./10_grouped_iteration/lc_2414_最长的字母序连续子字符串的长度.py>) |
-| 3456 | [找出长度为 K 的特殊子字符串](https://leetcode.cn/problems/find-special-substring-of-length-k/) | Easy | [Python](<./10_grouped_iteration/lc_3456_找出长度为_K_的特殊子字符串.py>) |
-| 830 | [较大分组的位置](https://leetcode.cn/problems/positions-of-large-groups/) | Easy | [Python](<./10_grouped_iteration/lc_830_较大分组的位置.py>) |
-| 2264 | [字符串中最大的 3 位相同数字](https://leetcode.cn/problems/largest-3-same-digit-number-in-string/) | Easy | [Python](<./10_grouped_iteration/lc_2264_字符串中最大的_3_位相同数字.py>) |
-| 2348 | [全 0 子数组的数目](https://leetcode.cn/problems/number-of-zero-filled-subarrays/) | Medium | [Python](<./10_grouped_iteration/lc_2348_全_0_子数组的数目.py>) |
-| 1513 | [仅含 1 的子串数](https://leetcode.cn/problems/number-of-substrings-with-only-1s/) | Medium | [Python](<./10_grouped_iteration/lc_1513_仅含_1_的子串数.py>) |
-| 1957 | [删除字符使字符串变好](https://leetcode.cn/problems/delete-characters-to-make-fancy-string/) | Easy | [Python](<./10_grouped_iteration/lc_1957_删除字符使字符串变好.py>) |
-| 674 | [最长连续递增序列](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/) | Easy | [Python](<./10_grouped_iteration/lc_674_最长连续递增序列.py>) |
-| 3708 | [最长斐波那契子数组](https://leetcode.cn/problems/longest-fibonacci-subarray/) | Medium | [Python](<./10_grouped_iteration/lc_3708_最长斐波那契子数组.py>) |
-| 696 | [计数二进制子串](https://leetcode.cn/problems/count-binary-substrings/) | Easy | [Python](<./10_grouped_iteration/lc_696_计数二进制子串.py>) |
-| 978 | [最长湍流子数组](https://leetcode.cn/problems/longest-turbulent-subarray/) | Medium | [Python](<./10_grouped_iteration/lc_978_最长湍流子数组.py>) |
-| 2110 | [股票平滑下跌阶段的数目](https://leetcode.cn/problems/number-of-smooth-descent-periods-of-a-stock/) | Medium | [Python](<./10_grouped_iteration/lc_2110_股票平滑下跌阶段的数目.py>) |
-| 228 | [汇总区间](https://leetcode.cn/problems/summary-ranges/) | Easy | [Python](<./10_grouped_iteration/lc_228_汇总区间.py>) |
-| 2760 | [最长奇偶子数组](https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/) | Easy | [Python](<./10_grouped_iteration/lc_2760_最长奇偶子数组.py>) |
-| 1887 | [使数组元素相等的减少操作次数](https://leetcode.cn/problems/reduction-operations-to-make-the-array-elements-equal/) | Medium | [Python](<./10_grouped_iteration/lc_1887_使数组元素相等的减少操作次数.py>) |
-| 845 | [数组中的最长山脉](https://leetcode.cn/problems/longest-mountain-in-array/) | Medium | [Python](<./10_grouped_iteration/lc_845_数组中的最长山脉.py>) |
-| 2038 | [如果相邻两个颜色均相同则删除当前颜色](https://leetcode.cn/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/) | Medium | [Python](<./10_grouped_iteration/lc_2038_如果相邻两个颜色均相同则删除当前颜色.py>) |
-| 2900 | [最长相邻不相等子序列 I](https://leetcode.cn/problems/longest-unequal-adjacent-groups-subsequence-i/) | Easy | [Python](<./10_grouped_iteration/lc_2900_最长相邻不相等子序列_I.py>) |
-| 1759 | [统计同质子字符串的数目](https://leetcode.cn/problems/count-number-of-homogenous-substrings/) | Medium | [Python](<./10_grouped_iteration/lc_1759_统计同质子字符串的数目.py>) |
-| 3011 | [判断一个数组是否可以变为有序](https://leetcode.cn/problems/find-if-array-can-be-sorted/) | Medium | [Python](<./10_grouped_iteration/lc_3011_判断一个数组是否可以变为有序.py>) |
-| 1578 | [使绳子变成彩色的最短时间](https://leetcode.cn/problems/minimum-time-to-make-rope-colorful/) | Medium | [Python](<./10_grouped_iteration/lc_1578_使绳子变成彩色的最短时间.py>) |
-| 1839 | [所有元音按顺序排布的最长子字符串](https://leetcode.cn/problems/longest-substring-of-all-vowels-in-order/) | Medium | [Python](<./10_grouped_iteration/lc_1839_所有元音按顺序排布的最长子字符串.py>) |
-| 2765 | [最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray/) | Easy | [Python](<./10_grouped_iteration/lc_2765_最长交替子数组.py>) |
-| 3255 | [长度为 K 的子数组的能量值 II](https://leetcode.cn/problems/find-the-power-of-k-size-subarrays-ii/) | Medium | [Python](<./10_grouped_iteration/lc_3255_长度为_K_的子数组的能量值_II.py>) |
-| 3350 | [检测相邻递增子数组 II](https://leetcode.cn/problems/adjacent-increasing-subarrays-detection-ii/) | Medium | [Python](<./10_grouped_iteration/lc_3350_检测相邻递增子数组_II.py>) |
-| 3105 | [最长的严格递增或递减子数组](https://leetcode.cn/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/) | Easy | [Python](<./10_grouped_iteration/lc_3105_最长的严格递增或递减子数组.py>) |
-| 3926 | [有效单词计数](https://leetcode.cn/problems/count-valid-word-occurrences/) | Medium | [Python](<./10_grouped_iteration/lc_3926_有效单词计数.py>) |
-| 838 | [推多米诺](https://leetcode.cn/problems/push-dominoes/) | Medium | [Python](<./10_grouped_iteration/lc_838_推多米诺.py>) |
-| 467 | [环绕字符串中唯一的子字符串](https://leetcode.cn/problems/unique-substrings-in-wraparound-string/) | Medium | [Python](<./10_grouped_iteration/lc_467_环绕字符串中唯一的子字符串.py>) |
-| 3499 | [操作后最大活跃区段数 I](https://leetcode.cn/problems/maximize-active-section-with-trade-i/) | Medium | [Python](<./10_grouped_iteration/lc_3499_操作后最大活跃区段数_I.py>) |
-| 3952 | [下标覆盖处的最大总和](https://leetcode.cn/problems/maximum-total-value-of-covered-indices/) | Medium | [Python](<./10_grouped_iteration/lc_3952_下标覆盖处的最大总和.py>) |
-| 413 | [等差数列划分](https://leetcode.cn/problems/arithmetic-slices/) | Medium | [Python](<./10_grouped_iteration/lc_413_等差数列划分.py>) |
-| 3738 | [替换至多一个元素后最长非递减子数组](https://leetcode.cn/problems/longest-non-decreasing-subarray-after-replacing-at-most-one-element/) | Medium | [Python](<./10_grouped_iteration/lc_3738_替换至多一个元素后最长非递减子数组.py>) |
-| 2147 | [分隔长廊的方案数](https://leetcode.cn/problems/number-of-ways-to-divide-a-long-corridor/) | Hard | [Python](<./10_grouped_iteration/lc_2147_分隔长廊的方案数.py>) |
-| 2593 | [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) | Medium | [Python](<./10_grouped_iteration/lc_2593_标记所有元素后数组的分数.py>) |
-| 68 | [文本左右对齐](https://leetcode.cn/problems/text-justification/) | Hard | [Python](<./10_grouped_iteration/lc_68_文本左右对齐.py>) |
-| 135 | [分发糖果](https://leetcode.cn/problems/candy/) | Hard | [Python](<./10_grouped_iteration/lc_135_分发糖果.py>) |
-| 3872 | [替换最多一个元素后的最长等差子数组](https://leetcode.cn/problems/longest-arithmetic-sequence-after-changing-at-most-one-element/) | Medium | [Python](<./10_grouped_iteration/lc_3872_替换最多一个元素后的最长等差子数组.py>) |
-| 2948 | [交换得到字典序最小的数组](https://leetcode.cn/problems/make-lexicographically-smallest-array-by-swapping-elements/) | Medium | [Python](<./10_grouped_iteration/lc_2948_交换得到字典序最小的数组.py>) |
-| 3948 | [字典序最大的 MEX 数组](https://leetcode.cn/problems/lexicographically-maximum-mex-array/) | Hard | [Python](<./10_grouped_iteration/lc_3948_字典序最大的_MEX_数组.py>) |
-| 3830 | [移除至多一个元素后的最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray-after-removing-at-most-one-element/) | Hard | [Python](<./10_grouped_iteration/lc_3830_移除至多一个元素后的最长交替子数组.py>) |
-| 3640 | [三段式数组 II](https://leetcode.cn/problems/trionic-array-ii/) | Hard | [Python](<./10_grouped_iteration/lc_3640_三段式数组_II.py>) |
 
 ## Away-From-Each-Other Two Pointers
 
@@ -158,6 +93,7 @@ This core-route collection contains every public problem in the selected section
 | 26 | [删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/) | Easy | [Python](<./05_in_place_modification/lc_26_删除有序数组中的重复项.py>) |
 | 80 | [删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/) | Medium | [Python](<./05_in_place_modification/lc_80_删除有序数组中的重复项_II.py>) |
 | 3940 | [限制有序数组中的元素出现次数](https://leetcode.cn/problems/limit-occurrences-in-sorted-array/) | Easy | [Python](<./05_in_place_modification/lc_3940_限制有序数组中的元素出现次数.py>) |
+| 2273 | [移除字母异位词后的结果数组](https://leetcode.cn/problems/find-resultant-array-after-removing-anagrams/) | Easy | [Python](<./05_in_place_modification/lc_2273_移除字母异位词后的结果数组.py>) |
 | 3684 | [至多 K 个不同元素的最大和](https://leetcode.cn/problems/maximize-sum-of-at-most-k-distinct-elements/) | Easy | [Python](<./05_in_place_modification/lc_3684_至多_K_个不同元素的最大和.py>) |
 | 283 | [移动零](https://leetcode.cn/problems/move-zeroes/) | Easy | [Python](<./05_in_place_modification/lc_283_移动零.py>) |
 | 905 | [按奇偶排序数组](https://leetcode.cn/problems/sort-array-by-parity/) | Easy | [Python](<./05_in_place_modification/lc_905_按奇偶排序数组.py>) |
@@ -227,3 +163,71 @@ This core-route collection contains every public problem in the selected section
 | 1898 | [可移除字符的最大数目](https://leetcode.cn/problems/maximum-number-of-removable-characters/) | Medium | [Python](<./08_subsequence_check/lc_1898_可移除字符的最大数目.py>) |
 | 2565 | [最少得分子序列](https://leetcode.cn/problems/subsequence-with-the-minimum-score/) | Hard | [Python](<./08_subsequence_check/lc_2565_最少得分子序列.py>) |
 | 3302 | [字典序最小的合法序列](https://leetcode.cn/problems/find-the-lexicographically-smallest-valid-sequence/) | Medium | [Python](<./08_subsequence_check/lc_3302_字典序最小的合法序列.py>) |
+
+## Three Pointers
+
+[Templates](./09_three_pointers/templates.md)
+
+| ID | Problem | Difficulty | Solution |
+| :--: | :-- | :--: | :--: |
+| 2367 | [等差三元组的数目](https://leetcode.cn/problems/number-of-arithmetic-triplets/) | Easy | [Python](<./09_three_pointers/lc_2367_等差三元组的数目.py>) |
+| 2563 | [统计公平数对的数目](https://leetcode.cn/problems/count-the-number-of-fair-pairs/) | Medium | [Python](<./09_three_pointers/lc_2563_统计公平数对的数目.py>) |
+| 795 | [区间子数组个数](https://leetcode.cn/problems/number-of-subarrays-with-bounded-maximum/) | Medium | [Python](<./09_three_pointers/lc_795_区间子数组个数.py>) |
+| 2444 | [统计定界子数组的数目](https://leetcode.cn/problems/count-subarrays-with-fixed-bounds/) | Hard | [Python](<./09_three_pointers/lc_2444_统计定界子数组的数目.py>) |
+| 3347 | [执行操作后元素的最高频率 II](https://leetcode.cn/problems/maximum-frequency-of-an-element-after-performing-operations-ii/) | Hard | [Python](<./09_three_pointers/lc_3347_执行操作后元素的最高频率_II.py>) |
+| 3464 | [正方形上的点之间的最大距离](https://leetcode.cn/problems/maximize-the-distance-between-points-on-a-square/) | Hard | [Python](<./09_three_pointers/lc_3464_正方形上的点之间的最大距离.py>) |
+
+## Grouped Iteration
+
+[Templates](./10_grouped_iteration/templates.md)
+
+| ID | Problem | Difficulty | Solution |
+| :--: | :-- | :--: | :--: |
+| 485 | [最大连续 1 的个数](https://leetcode.cn/problems/max-consecutive-ones/) | Easy | [Python](<./10_grouped_iteration/lc_485_最大连续_1_的个数.py>) |
+| 1446 | [连续字符](https://leetcode.cn/problems/consecutive-characters/) | Easy | [Python](<./10_grouped_iteration/lc_1446_连续字符.py>) |
+| 1869 | [哪种连续子字符串更长](https://leetcode.cn/problems/longer-contiguous-segments-of-ones-than-zeros/) | Easy | [Python](<./10_grouped_iteration/lc_1869_哪种连续子字符串更长.py>) |
+| 4038 | [计算单个区间中出现的整数数量](https://leetcode.cn/problems/count-integers-appearing-in-a-single-block/) | Easy | [Python](<./10_grouped_iteration/lc_4038_计算单个区间中出现的整数数量.py>) |
+| 2414 | [最长的字母序连续子字符串的长度](https://leetcode.cn/problems/length-of-the-longest-alphabetical-continuous-substring/) | Medium | [Python](<./10_grouped_iteration/lc_2414_最长的字母序连续子字符串的长度.py>) |
+| 3456 | [找出长度为 K 的特殊子字符串](https://leetcode.cn/problems/find-special-substring-of-length-k/) | Easy | [Python](<./10_grouped_iteration/lc_3456_找出长度为_K_的特殊子字符串.py>) |
+| 830 | [较大分组的位置](https://leetcode.cn/problems/positions-of-large-groups/) | Easy | [Python](<./10_grouped_iteration/lc_830_较大分组的位置.py>) |
+| 2273 | [移除字母异位词后的结果数组](https://leetcode.cn/problems/find-resultant-array-after-removing-anagrams/) | Easy | [Python](<./10_grouped_iteration/lc_2273_移除字母异位词后的结果数组.py>) |
+| 2264 | [字符串中最大的 3 位相同数字](https://leetcode.cn/problems/largest-3-same-digit-number-in-string/) | Easy | [Python](<./10_grouped_iteration/lc_2264_字符串中最大的_3_位相同数字.py>) |
+| 2348 | [全 0 子数组的数目](https://leetcode.cn/problems/number-of-zero-filled-subarrays/) | Medium | [Python](<./10_grouped_iteration/lc_2348_全_0_子数组的数目.py>) |
+| 1513 | [仅含 1 的子串数](https://leetcode.cn/problems/number-of-substrings-with-only-1s/) | Medium | [Python](<./10_grouped_iteration/lc_1513_仅含_1_的子串数.py>) |
+| 1957 | [删除字符使字符串变好](https://leetcode.cn/problems/delete-characters-to-make-fancy-string/) | Easy | [Python](<./10_grouped_iteration/lc_1957_删除字符使字符串变好.py>) |
+| 674 | [最长连续递增序列](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/) | Easy | [Python](<./10_grouped_iteration/lc_674_最长连续递增序列.py>) |
+| 3708 | [最长斐波那契子数组](https://leetcode.cn/problems/longest-fibonacci-subarray/) | Medium | [Python](<./10_grouped_iteration/lc_3708_最长斐波那契子数组.py>) |
+| 696 | [计数二进制子串](https://leetcode.cn/problems/count-binary-substrings/) | Easy | [Python](<./10_grouped_iteration/lc_696_计数二进制子串.py>) |
+| 978 | [最长湍流子数组](https://leetcode.cn/problems/longest-turbulent-subarray/) | Medium | [Python](<./10_grouped_iteration/lc_978_最长湍流子数组.py>) |
+| 2110 | [股票平滑下跌阶段的数目](https://leetcode.cn/problems/number-of-smooth-descent-periods-of-a-stock/) | Medium | [Python](<./10_grouped_iteration/lc_2110_股票平滑下跌阶段的数目.py>) |
+| 228 | [汇总区间](https://leetcode.cn/problems/summary-ranges/) | Easy | [Python](<./10_grouped_iteration/lc_228_汇总区间.py>) |
+| 2760 | [最长奇偶子数组](https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/) | Easy | [Python](<./10_grouped_iteration/lc_2760_最长奇偶子数组.py>) |
+| 1887 | [使数组元素相等的减少操作次数](https://leetcode.cn/problems/reduction-operations-to-make-the-array-elements-equal/) | Medium | [Python](<./10_grouped_iteration/lc_1887_使数组元素相等的减少操作次数.py>) |
+| 845 | [数组中的最长山脉](https://leetcode.cn/problems/longest-mountain-in-array/) | Medium | [Python](<./10_grouped_iteration/lc_845_数组中的最长山脉.py>) |
+| 2038 | [如果相邻两个颜色均相同则删除当前颜色](https://leetcode.cn/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/) | Medium | [Python](<./10_grouped_iteration/lc_2038_如果相邻两个颜色均相同则删除当前颜色.py>) |
+| 2900 | [最长相邻不相等子序列 I](https://leetcode.cn/problems/longest-unequal-adjacent-groups-subsequence-i/) | Easy | [Python](<./10_grouped_iteration/lc_2900_最长相邻不相等子序列_I.py>) |
+| 1759 | [统计同质子字符串的数目](https://leetcode.cn/problems/count-number-of-homogenous-substrings/) | Medium | [Python](<./10_grouped_iteration/lc_1759_统计同质子字符串的数目.py>) |
+| 3011 | [判断一个数组是否可以变为有序](https://leetcode.cn/problems/find-if-array-can-be-sorted/) | Medium | [Python](<./10_grouped_iteration/lc_3011_判断一个数组是否可以变为有序.py>) |
+| 1861 | [旋转盒子](https://leetcode.cn/problems/rotating-the-box/) | Medium | [Python](<./10_grouped_iteration/lc_1861_旋转盒子.py>) |
+| 1578 | [使绳子变成彩色的最短时间](https://leetcode.cn/problems/minimum-time-to-make-rope-colorful/) | Medium | [Python](<./10_grouped_iteration/lc_1578_使绳子变成彩色的最短时间.py>) |
+| 1839 | [所有元音按顺序排布的最长子字符串](https://leetcode.cn/problems/longest-substring-of-all-vowels-in-order/) | Medium | [Python](<./10_grouped_iteration/lc_1839_所有元音按顺序排布的最长子字符串.py>) |
+| 2765 | [最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray/) | Easy | [Python](<./10_grouped_iteration/lc_2765_最长交替子数组.py>) |
+| 3255 | [长度为 K 的子数组的能量值 II](https://leetcode.cn/problems/find-the-power-of-k-size-subarrays-ii/) | Medium | [Python](<./10_grouped_iteration/lc_3255_长度为_K_的子数组的能量值_II.py>) |
+| 3350 | [检测相邻递增子数组 II](https://leetcode.cn/problems/adjacent-increasing-subarrays-detection-ii/) | Medium | [Python](<./10_grouped_iteration/lc_3350_检测相邻递增子数组_II.py>) |
+| 3105 | [最长的严格递增或递减子数组](https://leetcode.cn/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/) | Easy | [Python](<./10_grouped_iteration/lc_3105_最长的严格递增或递减子数组.py>) |
+| 3926 | [有效单词计数](https://leetcode.cn/problems/count-valid-word-occurrences/) | Medium | [Python](<./10_grouped_iteration/lc_3926_有效单词计数.py>) |
+| 838 | [推多米诺](https://leetcode.cn/problems/push-dominoes/) | Medium | [Python](<./10_grouped_iteration/lc_838_推多米诺.py>) |
+| 467 | [环绕字符串中唯一的子字符串](https://leetcode.cn/problems/unique-substrings-in-wraparound-string/) | Medium | [Python](<./10_grouped_iteration/lc_467_环绕字符串中唯一的子字符串.py>) |
+| 3499 | [操作后最大活跃区段数 I](https://leetcode.cn/problems/maximize-active-section-with-trade-i/) | Medium | [Python](<./10_grouped_iteration/lc_3499_操作后最大活跃区段数_I.py>) |
+| 3952 | [下标覆盖处的最大总和](https://leetcode.cn/problems/maximum-total-value-of-covered-indices/) | Medium | [Python](<./10_grouped_iteration/lc_3952_下标覆盖处的最大总和.py>) |
+| 413 | [等差数列划分](https://leetcode.cn/problems/arithmetic-slices/) | Medium | [Python](<./10_grouped_iteration/lc_413_等差数列划分.py>) |
+| 3738 | [替换至多一个元素后最长非递减子数组](https://leetcode.cn/problems/longest-non-decreasing-subarray-after-replacing-at-most-one-element/) | Medium | [Python](<./10_grouped_iteration/lc_3738_替换至多一个元素后最长非递减子数组.py>) |
+| 2147 | [分隔长廊的方案数](https://leetcode.cn/problems/number-of-ways-to-divide-a-long-corridor/) | Hard | [Python](<./10_grouped_iteration/lc_2147_分隔长廊的方案数.py>) |
+| 2593 | [标记所有元素后数组的分数](https://leetcode.cn/problems/find-score-of-an-array-after-marking-all-elements/) | Medium | [Python](<./10_grouped_iteration/lc_2593_标记所有元素后数组的分数.py>) |
+| 68 | [文本左右对齐](https://leetcode.cn/problems/text-justification/) | Hard | [Python](<./10_grouped_iteration/lc_68_文本左右对齐.py>) |
+| 135 | [分发糖果](https://leetcode.cn/problems/candy/) | Hard | [Python](<./10_grouped_iteration/lc_135_分发糖果.py>) |
+| 3872 | [替换最多一个元素后的最长等差子数组](https://leetcode.cn/problems/longest-arithmetic-sequence-after-changing-at-most-one-element/) | Medium | [Python](<./10_grouped_iteration/lc_3872_替换最多一个元素后的最长等差子数组.py>) |
+| 2948 | [交换得到字典序最小的数组](https://leetcode.cn/problems/make-lexicographically-smallest-array-by-swapping-elements/) | Medium | [Python](<./10_grouped_iteration/lc_2948_交换得到字典序最小的数组.py>) |
+| 3948 | [字典序最大的 MEX 数组](https://leetcode.cn/problems/lexicographically-maximum-mex-array/) | Hard | [Python](<./10_grouped_iteration/lc_3948_字典序最大的_MEX_数组.py>) |
+| 3830 | [移除至多一个元素后的最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray-after-removing-at-most-one-element/) | Hard | [Python](<./10_grouped_iteration/lc_3830_移除至多一个元素后的最长交替子数组.py>) |
+| 3640 | [三段式数组 II](https://leetcode.cn/problems/trionic-array-ii/) | Hard | [Python](<./10_grouped_iteration/lc_3640_三段式数组_II.py>) |

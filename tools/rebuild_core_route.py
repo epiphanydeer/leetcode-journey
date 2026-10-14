@@ -1,10 +1,9 @@
 """Rebuild the repository from the eight-stage core route in Endlesscheng's guide.
 
-This program never deletes topic folders until every selected public problem has
-been fetched successfully into a staging directory.  Implemented legacy
-solutions are copied to legacy_user_solutions/ before the old topic layout is
-removed.  Paid problems are deliberately skipped.  The guide's first topic is
-split into Sliding Window and Two Pointers so they can be practised separately.
+This program fetches every selected public problem into a staging directory,
+then adds missing exercise files and refreshes topic indexes. Existing exercise
+files and templates are preserved. Paid problems are deliberately skipped.
+The guide's first topic is split into Sliding Window and Two Pointers.
 """
 from __future__ import annotations
 
@@ -53,10 +52,10 @@ TOPICS = [
     Topic("02_two_pointers", "02. 双指针", "https://leetcode.cn/discuss/post/0viNMK/", "two_pointers"),
     Topic("03_binary_search", "03. 二分查找", "https://leetcode.cn/discuss/post/3579164/ti-dan-er-fen-suan-fa-er-fen-da-an-zui-x-3rqn/", "binary_full"),
     Topic("04_data_structures", "04. 新手村常用工具：数据结构", "https://leetcode.cn/discuss/post/mOr1u6/", "data"),
-    Topic("05_binary_tree_dfs", "05. 二叉树 DFS", "https://leetcode.cn/discuss/post/K0n2gO/", "tree_dfs"),
+    Topic("05_linked_list_tree", "05. 链表与树（含递归/分治）", "https://leetcode.cn/discuss/post/K0n2gO/", "linked_list_tree"),
     Topic("06_grid_graph", "06. 网格图", "https://leetcode.cn/discuss/post/3580195/fen-xiang-gun-ti-dan-wang-ge-tu-dfsbfszo-l3pa/", "grid_full"),
     Topic("07_backtracking", "07. 回溯", "https://leetcode.cn/discuss/post/K0n2gO/", "backtracking"),
-    Topic("08_dynamic_programming", "08. 动态规划（前六章）", "https://leetcode.cn/discuss/post/tXLS3i/", "dp"),
+    Topic("08_dynamic_programming", "08. 动态规划", "https://leetcode.cn/discuss/post/tXLS3i/", "dp"),
 ]
 
 INTRO_TOPIC = Topic(
@@ -66,11 +65,10 @@ INTRO_TOPIC = Topic(
     "intro",
 )
 
-# On the first run these replace the thirteen mistaken folders.  On later runs
-# they also replace the current eight-stage layout, so a regenerated chapter is
-# never moved inside an existing folder with the same name.
+# Historical and current topic locations are searched for handwritten solutions
+# when staging a fresh exercise file.
 REPLACED_TOPIC_DIRS = list(dict.fromkeys(TOPIC_DIRS + [
-    "05_grid_graph_dfs", INTRO_TOPIC.folder,
+    "05_grid_graph_dfs", "05_binary_tree_dfs", INTRO_TOPIC.folder,
     # Previous core-route names, before Two Pointers was restored as chapter 02.
     "02_binary_search", "03_data_structures", "04_binary_tree_dfs",
     "05_grid_graph", "06_backtracking", "07_dynamic_programming",
@@ -93,9 +91,11 @@ SECTIONS: dict[str, dict[str, tuple[str, str]]] = {
     },
     "01_sliding_window": {
         "§1.1 基础": ("01_fixed_size", "Fixed-Size Sliding Window"),
+        "§1.2 进阶（选做）": ("05_fixed_size_advanced", "Fixed-Size Sliding Window: Advanced"),
         "§2.1 越短越合法/求最长/最大": ("02_variable_longest", "Variable-Size Window: Longest / Maximum"),
         "§2.2 越长越合法/求最短/最小": ("03_variable_shortest", "Variable-Size Window: Shortest / Minimum"),
         "§2.3 求子数组个数": ("04_subarray_count", "Variable-Size Window: Subarray Count"),
+        "§2.4 其他（选做）": ("06_other_sliding_window", "Other Sliding-Window Problems"),
     },
     "02_two_pointers": {
         "§3.1 反转字符串": ("01_reverse_string", "Reverse String"),
@@ -129,8 +129,10 @@ SECTIONS: dict[str, dict[str, tuple[str, str]]] = {
         "§1.2 前缀和与哈希表": ("05_prefix_sum_hash_map", "Prefix Sum and Hash Map"),
         "§1.3 距离和": ("06_prefix_sum_distance_sum", "Prefix-Sum Distance Sum"),
         "§1.4 状态压缩前缀和": ("07_prefix_sum_state_compression", "State-Compressed Prefix Sum"),
+        "§1.5 进阶": ("24_prefix_sum_advanced", "Prefix Sum: Advanced"),
         "§1.6 二维前缀和": ("08_two_dimensional_prefix_sum", "Two-Dimensional Prefix Sum"),
         "§3.1 基础": ("09_stack_basics", "Stack Basics"),
+        "§3.2 进阶": ("25_stack_advanced", "Stack: Advanced"),
         "§3.3 邻项消除": ("10_stack_adjacent_elimination", "Stack: Adjacent Elimination"),
         "§3.4 合法括号字符串（RBS）": ("11_stack_valid_parentheses", "Stack: Valid Parentheses"),
         "§3.5 表达式解析": ("12_stack_expression_parsing", "Stack: Expression Parsing"),
@@ -140,16 +142,84 @@ SECTIONS: dict[str, dict[str, tuple[str, str]]] = {
         "§4.3 双端队列": ("16_deque", "Deque"),
         "§4.4 单调队列": ("17_monotonic_queue", "Monotonic Queue"),
         "§5.1 基础": ("18_heap_basics", "Heap Basics"),
+        "§5.2 进阶": ("26_heap_advanced", "Heap: Advanced"),
         "§5.3 第 K 小/大": ("19_heap_kth_smallest_largest", "Heap: K-th Smallest / Largest"),
         "§5.4 重排元素": ("20_heap_rearrange_elements", "Heap: Rearrange Elements"),
         "§5.5 反悔堆": ("21_heap_regret_greedy", "Heap: Regret Greedy"),
         "§5.6 懒删除堆": ("22_heap_lazy_deletion", "Heap: Lazy Deletion"),
         "§5.7 对顶堆（动态第 K 小/大）": ("23_heap_dual_heaps", "Heap: Dual Heaps"),
+        "§2.1 一维差分": ("27_one_dimensional_difference", "One-Dimensional Difference Array"),
+        "§2.2 二维差分": ("28_two_dimensional_difference", "Two-Dimensional Difference Array"),
+        "§6.1 基础": ("29_trie_basics", "Trie Basics"),
+        "§6.2 进阶": ("30_trie_advanced", "Trie: Advanced"),
+        "§6.3 字典树优化 DP": ("31_trie_optimized_dp", "Trie-Optimized DP"),
+        "§6.4 0-1 字典树（异或字典树）": ("32_bitwise_trie", "Bitwise Trie"),
+        "§7.1 基础": ("33_union_find_basics", "Union-Find Basics"),
+        "§7.2 进阶": ("34_union_find_advanced", "Union-Find: Advanced"),
+        "§7.3 中介并查集": ("35_intermediary_union_find", "Intermediary Union-Find"),
+        "§7.4 数组上的并查集": ("36_array_union_find", "Union-Find on Arrays"),
+        "§7.5 区间并查集": ("37_interval_union_find", "Interval Union-Find"),
+        "§7.6 带权并查集（边权并查集）": ("38_weighted_union_find", "Weighted Union-Find"),
+        "§8.1 树状数组": ("39_fenwick_tree", "Fenwick Tree"),
+        "§8.2 逆序对": ("40_inversion_count", "Inversion Count"),
+        "§8.3 线段树（无区间更新）": ("41_segment_tree", "Segment Tree"),
+        "§8.4 Lazy 线段树（有区间更新）": ("42_lazy_segment_tree", "Lazy Segment Tree"),
+        "§8.5 动态开点线段树": ("43_dynamic_segment_tree", "Dynamic Segment Tree"),
+        "§8.6 可持久化线段树": ("44_persistent_segment_tree", "Persistent Segment Tree"),
+        "§8.7 ST 表（Sparse Table）": ("45_sparse_table", "Sparse Table"),
+        "九、伸展树（Splay 树）": ("46_splay_tree", "Splay Tree"),
+        "十、CDQ 分治 / 值域分治": ("47_cdq_divide_and_conquer", "CDQ and Value-Domain Divide and Conquer"),
+        "§11.1 分块": ("48_block_decomposition", "Block Decomposition"),
+        "§11.2 莫队算法": ("49_mos_algorithm", "Mo's Algorithm"),
+        "§11.3 根号分解（Sqrt Decomposition）": ("50_sqrt_decomposition", "Square-Root Decomposition"),
+        "§11.4 其他": ("51_other_sqrt_algorithms", "Other Square-Root Algorithms"),
+        "专题：离线算法": ("52_offline_algorithms", "Offline Algorithms"),
+        "Part A": ("53_programming_drills_a", "Programming Drills A"),
+        "Part B": ("54_programming_drills_b", "Programming Drills B"),
+        "Part C": ("55_programming_drills_c", "Programming Drills C"),
     },
-    "05_binary_tree_dfs": {
-        "§2.2 自顶向下 DFS（先序遍历）": ("01_top_down_dfs_preorder", "Top-Down DFS (Preorder)"),
-        "§2.3 自底向上 DFS（后序遍历）": ("02_bottom_up_dfs_postorder", "Bottom-Up DFS (Postorder)"),
-        "§2.4 自底向上 DFS：删点": ("03_bottom_up_dfs_delete_nodes", "Bottom-Up DFS: Delete Nodes"),
+    "05_linked_list_tree": {
+        "§1.1 遍历链表": ("01_traverse_linked_list", "Traverse Linked Lists"),
+        "§1.2 删除节点": ("02_delete_linked_list_nodes", "Delete Linked-List Nodes"),
+        "§1.3 插入节点": ("03_insert_linked_list_nodes", "Insert Linked-List Nodes"),
+        "§1.4 反转链表": ("04_reverse_linked_list", "Reverse Linked Lists"),
+        "§1.5 前后指针": ("05_leading_and_trailing_pointers", "Leading and Trailing Pointers"),
+        "§1.6 快慢指针": ("06_fast_and_slow_pointers", "Fast and Slow Pointers"),
+        "§1.7 双指针": ("07_linked_list_two_pointers", "Linked-List Two Pointers"),
+        "§1.8 合并链表": ("08_merge_linked_lists", "Merge Linked Lists"),
+        "§1.9 分治": ("09_linked_list_divide_and_conquer", "Linked-List Divide and Conquer"),
+        "§1.10 综合应用": ("10_linked_list_applications", "Linked-List Applications"),
+        "§1.11 其他": ("11_other_linked_list", "Other Linked-List Problems"),
+        "§2.1 遍历二叉树": ("12_binary_tree_traversal", "Binary-Tree Traversal"),
+        "§2.2 自顶向下 DFS（先序遍历）": ("13_top_down_dfs_preorder", "Top-Down DFS (Preorder)"),
+        "§2.3 自底向上 DFS（后序遍历）": ("14_bottom_up_dfs_postorder", "Bottom-Up DFS (Postorder)"),
+        "§2.4 自底向上 DFS：删点": ("15_bottom_up_dfs_delete_nodes", "Bottom-Up DFS: Delete Nodes"),
+        "§2.5 有递有归": ("16_binary_tree_pre_and_post_order", "Binary-Tree Preorder and Postorder"),
+        "§2.6 二叉树的直径": ("17_binary_tree_diameter", "Binary-Tree Diameter"),
+        "§2.7 回溯": ("18_binary_tree_backtracking", "Binary-Tree Backtracking"),
+        "§2.8 最近公共祖先": ("19_binary_tree_lca", "Binary-Tree Lowest Common Ancestor"),
+        "§2.9 二叉搜索树": ("20_binary_search_tree", "Binary Search Tree"),
+        "§2.10 创建二叉树": ("21_construct_binary_tree", "Construct Binary Trees"),
+        "§2.11 插入/删除节点": ("22_insert_delete_tree_nodes", "Insert and Delete Tree Nodes"),
+        "§2.12 树形 DP": ("23_binary_tree_dp", "Binary-Tree DP"),
+        "§2.13 二叉树 BFS": ("24_binary_tree_bfs", "Binary-Tree BFS"),
+        "§2.14 链表+二叉树": ("25_linked_list_and_binary_tree", "Linked Lists and Binary Trees"),
+        "§2.15 N 叉树": ("26_n_ary_tree", "N-ary Trees"),
+        "§2.16 其他": ("27_other_binary_tree", "Other Binary-Tree Problems"),
+        "§3.1 遍历": ("28_general_tree_traversal", "General-Tree Traversal"),
+        "§3.2 自顶向下 DFS": ("29_general_tree_top_down_dfs", "General-Tree Top-Down DFS"),
+        "§3.3 自底向上 DFS": ("30_general_tree_bottom_up_dfs", "General-Tree Bottom-Up DFS"),
+        "§3.4 有递有归": ("31_general_tree_pre_and_post_order", "General-Tree Preorder and Postorder"),
+        "§3.5 树的直径": ("32_general_tree_diameter", "General-Tree Diameter"),
+        "§3.6 树的拓扑排序": ("33_tree_topological_sort", "Tree Topological Sort"),
+        "§3.7 DFS 时间戳": ("34_dfs_timestamps", "DFS Timestamps"),
+        "§3.8 最近公共祖先（LCA）、倍增算法": ("35_general_tree_lca", "General-Tree LCA and Binary Lifting"),
+        "§3.9 虚树": ("36_virtual_tree", "Virtual Trees"),
+        "§3.10 树上启发式合并": ("37_small_to_large_merging", "Small-to-Large Tree Merging"),
+        "§3.11 点分治": ("38_centroid_decomposition", "Centroid Decomposition"),
+        "§3.12 树上滑动窗口": ("39_tree_sliding_window", "Sliding Window on Trees"),
+        "§3.13 其他": ("40_other_general_tree", "Other General-Tree Problems"),
+        "五、其他递归/分治": ("41_other_recursion_divide_and_conquer", "Other Recursion and Divide and Conquer"),
     },
     "06_grid_graph": {
         "一、网格图 DFS": ("01_grid_dfs", "Grid DFS"),
@@ -171,9 +241,12 @@ SECTIONS: dict[str, dict[str, tuple[str, str]]] = {
         "§1.2 打家劫舍": ("02_house_robber", "House Robber"),
         "§1.3 最大子数组和（最大子段和）": ("03_maximum_subarray", "Maximum Subarray"),
         "§2.1 基础": ("04_grid_dp_basics", "Grid DP Basics"),
+        "§2.2 进阶": ("15_grid_dp_advanced", "Grid DP: Advanced"),
         "§3.1 0-1 背包": ("05_zero_one_knapsack", "0-1 Knapsack"),
         "§3.2 完全背包": ("06_complete_knapsack", "Complete Knapsack"),
+        "§3.3 多重背包（选做）": ("16_multiple_knapsack", "Multiple Knapsack"),
         "§3.4 分组背包": ("07_group_knapsack", "Group Knapsack"),
+        "§3.5 树上背包（选做）": ("17_tree_knapsack", "Tree Knapsack"),
         "§4.1 最长公共子序列（LCS）": ("08_longest_common_subsequence", "Longest Common Subsequence"),
         "§4.2 最长递增子序列（LIS）": ("09_longest_increasing_subsequence", "Longest Increasing Subsequence"),
         "§5.1 判定能否划分": ("10_partition_feasibility", "Partition Feasibility"),
@@ -181,6 +254,47 @@ SECTIONS: dict[str, dict[str, tuple[str, str]]] = {
         "§5.3 约束划分个数": ("12_constrained_partition_count", "Constrained Partition Count"),
         "§6.1 买卖股票": ("13_stock_trading", "Stock Trading"),
         "§6.2 基础": ("14_state_machine_basics", "State-Machine DP Basics"),
+        "§6.3 进阶": ("18_state_machine_advanced", "State-Machine DP: Advanced"),
+        "§7.1 一维 DP": ("19_one_dimensional_dp", "One-Dimensional DP"),
+        "§7.2 不相交区间": ("20_non_overlapping_intervals_dp", "DP on Non-Overlapping Intervals"),
+        "§7.3 子数组 DP": ("21_subarray_dp", "Subarray DP"),
+        "§7.4 合法子序列 DP": ("22_valid_subsequence_dp", "Valid-Subsequence DP"),
+        "§7.5 子矩形 DP": ("23_subrectangle_dp", "Subrectangle DP"),
+        "§7.6 多维 DP": ("24_multidimensional_dp", "Multidimensional DP"),
+        "§7.7 计数 DP": ("25_counting_dp", "Counting DP"),
+        "§8.1 最长回文子序列": ("26_longest_palindromic_subsequence", "Longest Palindromic Subsequence"),
+        "§8.2 区间 DP": ("27_interval_dp", "Interval DP"),
+        "§9.1 排列型状压 DP ① 相邻无关": ("28_permutation_bitmask_dp_independent", "Permutation Bitmask DP: Independent Neighbors"),
+        "§9.2 排列型状压 DP ② 相邻相关": ("29_permutation_bitmask_dp_dependent", "Permutation Bitmask DP: Dependent Neighbors"),
+        "§9.3 旅行商问题（TSP）": ("30_traveling_salesperson", "Traveling Salesperson Problem"),
+        "§9.4 子集状压 DP": ("31_subset_bitmask_dp", "Subset Bitmask DP"),
+        "§9.5 轮廓线 DP": ("32_profile_dp", "Profile DP"),
+        "§9.6 SOS DP": ("33_sos_dp", "Sum Over Subsets DP"),
+        "§9.7 其他状压 DP": ("34_other_bitmask_dp", "Other Bitmask DP"),
+        "§10.1 统计合法元素的数目": ("35_digit_dp_count", "Digit DP: Count Valid Numbers"),
+        "§10.2 统计合法元素的价值总和": ("36_digit_dp_value_sum", "Digit DP: Sum Values"),
+        "§10.3 其他数位 DP": ("37_other_digit_dp", "Other Digit DP"),
+        "§11.1 前缀和优化 DP": ("38_prefix_sum_optimized_dp", "Prefix-Sum-Optimized DP"),
+        "§11.2 单调栈优化 DP": ("39_monotonic_stack_optimized_dp", "Monotonic-Stack-Optimized DP"),
+        "§11.3 单调队列优化 DP": ("40_monotonic_queue_optimized_dp", "Monotonic-Queue-Optimized DP"),
+        "§11.4 树状数组/线段树优化 DP": ("41_tree_optimized_dp", "Fenwick/Segment-Tree-Optimized DP"),
+        "§11.5 字典树优化 DP": ("42_trie_optimized_dp", "Trie-Optimized DP"),
+        "§11.6 矩阵快速幂优化 DP": ("43_matrix_exponentiation_dp", "Matrix-Exponentiation-Optimized DP"),
+        "§11.7 斜率优化 DP": ("44_convex_hull_trick_dp", "Convex-Hull-Trick DP"),
+        "§11.8 WQS 二分优化 DP": ("45_wqs_binary_search_dp", "WQS Binary-Search-Optimized DP"),
+        "§11.9 其他优化 DP": ("46_other_dp_optimizations", "Other DP Optimizations"),
+        "§12.1 树的直径": ("47_tree_diameter_dp", "Tree Diameter DP"),
+        "§12.2 树上最大独立集": ("48_tree_maximum_independent_set", "Maximum Independent Set on Trees"),
+        "§12.3 树上最小支配集": ("49_tree_minimum_dominating_set", "Minimum Dominating Set on Trees"),
+        "§12.4 换根 DP": ("50_rerooting_dp", "Rerooting DP"),
+        "§12.5 其他树形 DP": ("51_other_tree_dp", "Other Tree DP"),
+        "十三、图 DP": ("52_graph_dp", "Graph DP"),
+        "十四、博弈 DP": ("53_game_dp", "Game DP"),
+        "十五、概率 DP、期望 DP": ("54_probability_expected_value_dp", "Probability and Expected-Value DP"),
+        "专题：输出具体方案（打印方案）": ("55_reconstruct_dp_solution", "Reconstruct the DP Solution"),
+        "专题：前后缀分解": ("56_prefix_suffix_decomposition", "Prefix-Suffix Decomposition"),
+        "专题：跳跃游戏": ("57_jump_game_dp", "Jump Game DP"),
+        "其他": ("58_other_dp", "Other DP Problems"),
     },
 }
 
@@ -268,32 +382,18 @@ def parse_records(markdown: str) -> list[dict]:
     return records
 
 
-def optional(record: dict) -> bool:
-    return any(word in " ".join((record["h2"], record["h3"], record["h4"], record["tail"])) for word in ("进阶", "选做", "思维扩展", "相似题目"))
-
-
 def selected(record: dict, topic: Topic) -> bool:
     h2, h3 = record["h2"], record["h3"]
-    if topic.selector in ("binary_full", "grid_full"):
+    if topic.selector in ("binary_full", "grid_full", "data", "dp"):
         return True
     if topic.selector == "two_pointers":
         return h2.startswith(("三、", "四、", "五、", "六、"))
-    if optional(record):
-        return False
     if topic.selector == "sliding":
         return h2.startswith(("一、", "二、"))
-    if topic.selector == "binary":
-        return h2.startswith("一、")
-    if topic.selector == "data":
-        return h2.startswith(("零、", "一、", "三、", "四、", "五、"))
-    if topic.selector == "tree_dfs":
-        return h2.startswith("二、") and "DFS" in h3
-    if topic.selector == "grid_dfs":
-        return h2.startswith("一、")
+    if topic.selector == "linked_list_tree":
+        return not h2.startswith("四、")
     if topic.selector == "backtracking":
         return h2.startswith("四、")
-    if topic.selector == "dp":
-        return h2.startswith(("一、", "二、", "三、", "四、", "五、", "六、"))
     return False
 
 
@@ -403,17 +503,21 @@ def is_valid_implemented_solution(path: Path) -> bool:
     return is_implemented(path)
 
 
-def implemented_files_by_id() -> dict[str, Path]:
+def implemented_files_by_id(question_ids: set[str]) -> dict[str, Path]:
     """Find existing handwritten solutions so they can follow a problem into its new topic."""
     result: dict[str, Path] = {}
+    prefixes = sorted(
+        ((f"lc_{safe_name(question_id)}_", question_id) for question_id in question_ids),
+        key=lambda item: len(item[0]), reverse=True,
+    )
     for folder_name in REPLACED_TOPIC_DIRS:
         folder = ROOT / folder_name
         if not folder.exists():
             continue
         for file in folder.rglob("lc_*.py"):
-            match = re.match(r"lc_(\d+)_", file.name)
-            if match and is_valid_implemented_solution(file):
-                result.setdefault(match.group(1), file)
+            question_id = next((question_id for prefix, question_id in prefixes if file.name.startswith(prefix)), None)
+            if question_id and is_valid_implemented_solution(file):
+                result.setdefault(question_id, file)
     return result
 
 
@@ -423,6 +527,12 @@ def section_for(record: dict, topic: Topic) -> tuple[str, str]:
         return SECTIONS[topic.folder][key]
     except KeyError as exc:
         raise RuntimeError(f"No folder mapping for {topic.folder}: {key!r}") from exc
+
+
+def selected_records(records: list[dict], topic: Topic) -> list[dict]:
+    """Keep each problem once per broad section, preserving cross-section listings."""
+    candidates = [record for record in records if selected(record, topic)]
+    return list({(record["slug"], section_for(record, topic)[0]): record for record in candidates}.values())
 
 
 def write_template(folder: Path, title: str) -> None:
@@ -459,41 +569,55 @@ def write_readme(folder: Path, topic: Topic, records: list[tuple[dict, dict]]) -
     (folder / "README.md").write_text("\n".join(lines) + "\n", encoding=UTF8)
 
 
-def apply_staged() -> None:
-    """Archive handwritten work, then replace only the obsolete topic directories."""
-    if not STAGE.exists():
-        raise RuntimeError(f"Staged output does not exist: {STAGE}")
-    legacy = ROOT / "legacy_user_solutions"
-    manifest = []
-    for folder_name in REPLACED_TOPIC_DIRS:
-        old = ROOT / folder_name
-        if not old.exists():
-            continue
-        for file in old.rglob("lc_*.py"):
-            if is_implemented(file):
-                relative = file.relative_to(ROOT)
-                destination = legacy / relative
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(file, destination)
-                manifest.append(str(relative))
-    if manifest:
-        legacy.mkdir(exist_ok=True)
-        (legacy / "MIGRATED_FILES.md").write_text("# Preserved legacy solutions\n\n" + "\n".join(f"- `{entry}`" for entry in manifest) + "\n", encoding=UTF8)
+def write_overview() -> None:
+    """Summarize the synchronized topic indexes without counting repeats twice."""
+    lines = [
+        "# LeetCode Journey", "",
+        "题目来源：[如何科学刷题？](https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/)的八阶段路线及所链接题单。",
+        "按原题单完整章节收录非会员题；滑窗与双指针、链表与树及回溯分别建目录。跨章节重复出现的题只需做一次。",
+        "", "| 专题 | 题目位置 |", "| :-- | --: |",
+    ]
+    all_slugs: set[str] = set()
+    placements = 0
+    for topic in [INTRO_TOPIC, *TOPICS]:
+        readme = (ROOT / topic.folder / "README.md").read_text(encoding=UTF8)
+        slugs = re.findall(r"https://leetcode\.cn/problems/([^/]+)/", readme)
+        placements += len(slugs)
+        all_slugs.update(slugs)
+        lines.append(f"| [{topic.title}](./{topic.folder}/README.md) | {len(slugs)} |")
+    lines.extend(["", f"合计 **{placements} 个题目位置，{len(all_slugs)} 道不同题**（含编程入门）。会员题暂不收录。", ""])
+    (ROOT / "README.md").write_text("\n".join(lines), encoding=UTF8)
 
-    for folder_name in REPLACED_TOPIC_DIRS:
-        target = ROOT / folder_name
-        if target.exists():
-            shutil.rmtree(target)
-    for folder in sorted(STAGE.iterdir()):
-        shutil.move(str(folder), ROOT / folder.name)
+
+def apply_staged() -> None:
+    """Refresh indexes and add missing files without overwriting exercise work."""
+    if not (STAGE / ".build_complete").exists():
+        raise RuntimeError(f"Complete staged output does not exist: {STAGE}")
+    added = indexed = preserved = 0
+    for source in sorted(STAGE.rglob("*")):
+        if not source.is_file() or not (
+            source.name in ("README.md", "templates.md")
+            or (source.name.startswith("lc_") and source.suffix in (".py", ".sql"))
+        ):
+            continue
+        target = ROOT / source.relative_to(STAGE)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if source.name == "README.md":
+            shutil.copy2(source, target)
+            indexed += 1
+        elif target.exists():
+            preserved += 1
+        else:
+            shutil.copy2(source, target)
+            added += 1
     shutil.rmtree(STAGE)
-    (ROOT / "README.md").write_text("# LeetCode Journey\n\nBuilt from the [eight-stage core route](https://leetcode.cn/discuss/post/3141566/ru-he-ke-xue-shua-ti-by-endlesscheng-q3yd/).\n\nThe guide groups sliding-window and two-pointer problems in one source article; this repository separates them into `01_sliding_window` and `02_two_pointers` for focused practice. All public problems in the selected sections are included, paid problems are skipped, and a problem that appears in more than one topic only needs to be solved once.\n", encoding=UTF8)
-    print("Migration complete.")
+    write_overview()
+    print(f"Sync complete: {added} added, {indexed} indexes refreshed, {preserved} existing exercise/template files preserved.")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--apply", action="store_true", help="Replace the old topic layout after a complete staged build.")
+    parser.add_argument("--apply", action="store_true", help="Sync a complete staged build into the current topic layout.")
     parser.add_argument("--apply-staged", action="store_true", help="Apply an already validated staged build without fetching again.")
     args, _ = parser.parse_known_args()
     if args.apply and args.apply_staged:
@@ -505,12 +629,13 @@ def main() -> None:
     selected_by_topic: dict[str, list[dict]] = {INTRO_TOPIC.folder: intro_records()}
     for topic in TOPICS:
         records = parse_records(article_markdown(topic.source))
-        candidates = [record for record in records if selected(record, topic)]
-        selected_by_topic[topic.folder] = list({record["slug"]: record for record in candidates}.values())
+        selected_by_topic[topic.folder] = selected_records(records, topic)
 
     all_slugs = list(dict.fromkeys(record["slug"] for records in selected_by_topic.values() for record in records))
     questions = gql_questions(all_slugs)
-    existing_implementations = implemented_files_by_id()
+    existing_implementations = implemented_files_by_id({
+        str(question["questionFrontendId"]) for question in questions.values()
+    })
     if STAGE.exists():
         shutil.rmtree(STAGE)
     STAGE.mkdir()
@@ -551,8 +676,9 @@ def main() -> None:
         final_by_topic[topic.folder] = final
         print(f"{topic.folder}: {len(final)} public problems")
 
+    (STAGE / ".build_complete").write_text("complete\n", encoding=UTF8)
     if not args.apply:
-        print(f"\nStaged output is ready at: {STAGE}\nRun again with --apply to replace the old topic folders.")
+        print(f"\nStaged output is ready at: {STAGE}\nRun again with --apply-staged to sync the new files and indexes.")
         return
     apply_staged()
 

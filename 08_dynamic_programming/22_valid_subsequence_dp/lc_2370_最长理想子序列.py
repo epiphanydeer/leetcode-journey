@@ -1,0 +1,34 @@
+# 2370. 最长理想子序列
+'''
+给你一个由小写字母组成的字符串 s ，和一个整数 k 。如果满足下述条件，则可以将字符串 t 视作是 理想字符串 ：
+
+ t 是字符串 s 的一个子序列。
+
+ t 中每两个 相邻 字母在字母表中位次的绝对差值小于或等于 k 。
+
+返回 最长 理想字符串的长度。
+
+字符串的子序列同样是一个字符串，并且子序列还满足：可以经由其他字符串删除某些字符（也可以不删除）但不改变剩余字符的顺序得到。
+
+注意：字母表顺序不会循环。例如，'a' 和 'z' 在字母表中位次的绝对差值是 25 ，而不是 1 。
+'''
+
+from typing import *
+from collections import *
+from functools import *
+from itertools import *
+from math import *
+import bisect
+import heapq
+
+class Solution(object):
+    def longestIdealString(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+
+# 快速测试验证
+if __name__ == "__main__":
+    solution = Solution()

@@ -19,6 +19,33 @@ This core-route collection contains every public problem in the selected section
 | 2461 | [长度为 K 子数组中的最大和](https://leetcode.cn/problems/maximum-sum-of-distinct-subarrays-with-length-k/) | Medium | [Python](<./01_fixed_size/lc_2461_长度为_K_子数组中的最大和.py>) |
 | 1423 | [可获得的最大点数](https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/) | Medium | [Python](<./01_fixed_size/lc_1423_可获得的最大点数.py>) |
 
+## Fixed-Size Sliding Window: Advanced
+
+[Templates](./05_fixed_size_advanced/templates.md)
+
+| ID | Problem | Difficulty | Solution |
+| :--: | :-- | :--: | :--: |
+| 1052 | [爱生气的书店老板](https://leetcode.cn/problems/grumpy-bookstore-owner/) | Medium | [Python](<./05_fixed_size_advanced/lc_1052_爱生气的书店老板.py>) |
+| 3679 | [使库存平衡的最少丢弃次数](https://leetcode.cn/problems/minimum-discards-to-balance-inventory/) | Medium | [Python](<./05_fixed_size_advanced/lc_3679_使库存平衡的最少丢弃次数.py>) |
+| 3439 | [重新安排会议得到最多空余时间 I](https://leetcode.cn/problems/reschedule-meetings-for-maximum-free-time-i/) | Medium | [Python](<./05_fixed_size_advanced/lc_3439_重新安排会议得到最多空余时间_I.py>) |
+| 3694 | [删除子字符串后不同的终点](https://leetcode.cn/problems/distinct-points-reachable-after-substring-removal/) | Medium | [Python](<./05_fixed_size_advanced/lc_3694_删除子字符串后不同的终点.py>) |
+| 1297 | [子串的最大出现次数](https://leetcode.cn/problems/maximum-number-of-occurrences-of-a-substring/) | Medium | [Python](<./05_fixed_size_advanced/lc_1297_子串的最大出现次数.py>) |
+| 2134 | [最少交换次数来组合所有的 1 II](https://leetcode.cn/problems/minimum-swaps-to-group-all-1s-together-ii/) | Medium | [Python](<./05_fixed_size_advanced/lc_2134_最少交换次数来组合所有的_1_II.py>) |
+| 1652 | [拆炸弹](https://leetcode.cn/problems/defuse-the-bomb/) | Easy | [Python](<./05_fixed_size_advanced/lc_1652_拆炸弹.py>) |
+| 4043 | [恰好有 K 对相等相邻字符的循环移位数量](https://leetcode.cn/problems/count-rotations-with-exactly-k-equal-adjacent-pairs/) | Easy | [Python](<./05_fixed_size_advanced/lc_4043_恰好有_K_对相等相邻字符的循环移位数量.py>) |
+| 4044 | [统计好循环移位的数量](https://leetcode.cn/problems/count-good-cyclic-rotations/) | Medium | [Python](<./05_fixed_size_advanced/lc_4044_统计好循环移位的数量.py>) |
+| 3652 | [按策略买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Medium | [Python](<./05_fixed_size_advanced/lc_3652_按策略买卖股票的最佳时机.py>) |
+| 567 | [字符串的排列](https://leetcode.cn/problems/permutation-in-string/) | Medium | [Python](<./05_fixed_size_advanced/lc_567_字符串的排列.py>) |
+| 438 | [找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/) | Medium | [Python](<./05_fixed_size_advanced/lc_438_找到字符串中所有字母异位词.py>) |
+| 30 | [串联所有单词的子串](https://leetcode.cn/problems/substring-with-concatenation-of-all-words/) | Hard | [Python](<./05_fixed_size_advanced/lc_30_串联所有单词的子串.py>) |
+| 1888 | [使二进制字符串字符交替的最少反转次数](https://leetcode.cn/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/) | Medium | [Python](<./05_fixed_size_advanced/lc_1888_使二进制字符串字符交替的最少反转次数.py>) |
+| 2156 | [查找给定哈希值的子串](https://leetcode.cn/problems/find-substring-with-given-hash-value/) | Hard | [Python](<./05_fixed_size_advanced/lc_2156_查找给定哈希值的子串.py>) |
+| 2953 | [统计完全子字符串](https://leetcode.cn/problems/count-complete-substrings/) | Hard | [Python](<./05_fixed_size_advanced/lc_2953_统计完全子字符串.py>) |
+| 2200 | [找出数组中的所有 K 近邻下标](https://leetcode.cn/problems/find-all-k-distant-indices-in-an-array/) | Easy | [Python](<./05_fixed_size_advanced/lc_2200_找出数组中的所有_K_近邻下标.py>) |
+| 1461 | [检查一个字符串是否包含所有长度为 K 的二进制子串](https://leetcode.cn/problems/check-if-a-string-contains-all-binary-codes-of-size-k/) | Medium | [Python](<./05_fixed_size_advanced/lc_1461_检查一个字符串是否包含所有长度为_K_的二进制子串.py>) |
+| 1016 | [子串能表示从 1 到 N 数字的二进制串](https://leetcode.cn/problems/binary-string-with-substrings-representing-1-to-n/) | Medium | [Python](<./05_fixed_size_advanced/lc_1016_子串能表示从_1_到_N_数字的二进制串.py>) |
+| 2653 | [滑动子数组的美丽值](https://leetcode.cn/problems/sliding-subarray-beauty/) | Medium | [Python](<./05_fixed_size_advanced/lc_2653_滑动子数组的美丽值.py>) |
+
 ## Variable-Size Window: Longest / Maximum
 
 [Templates](./02_variable_longest/templates.md)
@@ -35,6 +62,25 @@ This core-route collection contains every public problem in the selected section
 | 2958 | [最多 K 个重复元素的最长子数组](https://leetcode.cn/problems/length-of-longest-subarray-with-at-most-k-frequency/) | Medium | [Python](<./02_variable_longest/lc_2958_最多_K_个重复元素的最长子数组.py>) |
 | 2024 | [考试的最大困扰度](https://leetcode.cn/problems/maximize-the-confusion-of-an-exam/) | Medium | [Python](<./02_variable_longest/lc_2024_考试的最大困扰度.py>) |
 | 1004 | [最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/) | Medium | [Python](<./02_variable_longest/lc_1004_最大连续1的个数_III.py>) |
+| 2730 | [找到最长的半重复子字符串](https://leetcode.cn/problems/find-the-longest-semi-repetitive-substring/) | Medium | [Python](<./02_variable_longest/lc_2730_找到最长的半重复子字符串.py>) |
+| 2779 | [数组的最大美丽值](https://leetcode.cn/problems/maximum-beauty-of-an-array-after-applying-operation/) | Medium | [Python](<./02_variable_longest/lc_2779_数组的最大美丽值.py>) |
+| 4032 | [至多 K 个不同质因数集合的最长子数组](https://leetcode.cn/problems/longest-subarray-with-at-most-k-distinct-prime-factors/) | Medium | [Python](<./02_variable_longest/lc_4032_至多_K_个不同质因数集合的最长子数组.py>) |
+| 1658 | [将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/) | Medium | [Python](<./02_variable_longest/lc_1658_将_x_减到_0_的最小操作数.py>) |
+| 1838 | [最高频元素的频数](https://leetcode.cn/problems/frequency-of-the-most-frequent-element/) | Medium | [Python](<./02_variable_longest/lc_1838_最高频元素的频数.py>) |
+| 2516 | [每种字符至少取 K 个](https://leetcode.cn/problems/take-k-of-each-character-from-left-and-right/) | Medium | [Python](<./02_variable_longest/lc_2516_每种字符至少取_K_个.py>) |
+| 2831 | [找出最长等值子数组](https://leetcode.cn/problems/find-the-longest-equal-subarray/) | Medium | [Python](<./02_variable_longest/lc_2831_找出最长等值子数组.py>) |
+| 2271 | [毯子覆盖的最多白色砖块数](https://leetcode.cn/problems/maximum-white-tiles-covered-by-a-carpet/) | Medium | [Python](<./02_variable_longest/lc_2271_毯子覆盖的最多白色砖块数.py>) |
+| 2106 | [摘水果](https://leetcode.cn/problems/maximum-fruits-harvested-after-at-most-k-steps/) | Hard | [Python](<./02_variable_longest/lc_2106_摘水果.py>) |
+| 2555 | [两个线段获得的最多奖品](https://leetcode.cn/problems/maximize-win-from-two-segments/) | Medium | [Python](<./02_variable_longest/lc_2555_两个线段获得的最多奖品.py>) |
+| 2009 | [使数组连续的最少操作数](https://leetcode.cn/problems/minimum-number-of-operations-to-make-array-continuous/) | Hard | [Python](<./02_variable_longest/lc_2009_使数组连续的最少操作数.py>) |
+| 1610 | [可见点的最大数目](https://leetcode.cn/problems/maximum-number-of-visible-points/) | Hard | [Python](<./02_variable_longest/lc_1610_可见点的最大数目.py>) |
+| 2781 | [最长合法子字符串的长度](https://leetcode.cn/problems/length-of-the-longest-valid-substring/) | Hard | [Python](<./02_variable_longest/lc_2781_最长合法子字符串的长度.py>) |
+| 3411 | [最长乘积等价子数组](https://leetcode.cn/problems/maximum-subarray-with-equal-products/) | Easy | [Python](<./02_variable_longest/lc_3411_最长乘积等价子数组.py>) |
+| 3413 | [收集连续 K 个袋子可以获得的最多硬币数量](https://leetcode.cn/problems/maximum-coins-from-k-consecutive-bags/) | Medium | [Python](<./02_variable_longest/lc_3413_收集连续_K_个袋子可以获得的最多硬币数量.py>) |
+| 395 | [至少有 K 个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/) | Medium | [Python](<./02_variable_longest/lc_395_至少有_K_个重复字符的最长子串.py>) |
+| 1763 | [最长的美好子字符串](https://leetcode.cn/problems/longest-nice-substring/) | Easy | [Python](<./02_variable_longest/lc_1763_最长的美好子字符串.py>) |
+| 2968 | [执行操作使频率分数最大](https://leetcode.cn/problems/apply-operations-to-maximize-frequency-score/) | Hard | [Python](<./02_variable_longest/lc_2968_执行操作使频率分数最大.py>) |
+| 1040 | [移动石子直到连续 II](https://leetcode.cn/problems/moving-stones-until-consecutive-ii/) | Medium | [Python](<./02_variable_longest/lc_1040_移动石子直到连续_II.py>) |
 
 ## Variable-Size Window: Shortest / Minimum
 
@@ -75,3 +121,18 @@ This core-route collection contains every public problem in the selected section
 | 3306 | [元音辅音字符串计数 II](https://leetcode.cn/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/) | Medium | [Python](<./04_subarray_count/lc_3306_元音辅音字符串计数_II.py>) |
 | 992 | [K 个不同整数的子数组](https://leetcode.cn/problems/subarrays-with-k-different-integers/) | Hard | [Python](<./04_subarray_count/lc_992_K_个不同整数的子数组.py>) |
 | 3859 | [统计包含 K 个不同整数的子数组](https://leetcode.cn/problems/count-subarrays-with-k-distinct-integers/) | Hard | [Python](<./04_subarray_count/lc_3859_统计包含_K_个不同整数的子数组.py>) |
+
+## Other Sliding-Window Problems
+
+[Templates](./06_other_sliding_window/templates.md)
+
+| ID | Problem | Difficulty | Solution |
+| :--: | :-- | :--: | :--: |
+| 825 | [适龄的朋友](https://leetcode.cn/problems/friends-of-appropriate-ages/) | Medium | [Python](<./06_other_sliding_window/lc_825_适龄的朋友.py>) |
+| 2401 | [最长优雅子数组](https://leetcode.cn/problems/longest-nice-subarray/) | Medium | [Python](<./06_other_sliding_window/lc_2401_最长优雅子数组.py>) |
+| 1156 | [单字符重复子串的最大长度](https://leetcode.cn/problems/swap-for-longest-repeated-character-substring/) | Medium | [Python](<./06_other_sliding_window/lc_1156_单字符重复子串的最大长度.py>) |
+| 424 | [替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/) | Medium | [Python](<./06_other_sliding_window/lc_424_替换后的最长重复字符.py>) |
+| 438 | [找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/) | Medium | [Python](<./06_other_sliding_window/lc_438_找到字符串中所有字母异位词.py>) |
+| 1712 | [将数组分成三个子数组的方案数](https://leetcode.cn/problems/ways-to-split-array-into-three-subarrays/) | Medium | [Python](<./06_other_sliding_window/lc_1712_将数组分成三个子数组的方案数.py>) |
+| 4033 | [有效 K 个不同元素子数组 I](https://leetcode.cn/problems/valid-k-unique-subarrays-i/) | Hard | [Python](<./06_other_sliding_window/lc_4033_有效_K_个不同元素子数组_I.py>) |
+| LCR 180 | [文件组合](https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/) | Easy | [Python](<./06_other_sliding_window/lc_LCR_180_文件组合.py>) |

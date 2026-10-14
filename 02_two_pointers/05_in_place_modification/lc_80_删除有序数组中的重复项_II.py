@@ -30,10 +30,11 @@ class Solution(object):
             if nums[fast] != nums[slow - 2]:
                 nums[slow] = nums[fast]
                 slow += 1
+
         return slow
 
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.removeDuplicates(nums=[0, 0, 1, 1, 1, 1, 2, 3, 3]))
+    print(solution.removeDuplicates(nums=[1, 1, 1, 2, 2, 3]))
