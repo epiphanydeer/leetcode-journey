@@ -25,7 +25,8 @@ class Solution(object):
         """
         vitrual_len = 0
         n = len(arr)
-        read, write = 0, n - 1
+        write = len(arr) - 1
+        read = 0
         while vitrual_len < n:
             if arr[read] == 0:
                 vitrual_len += 2
@@ -39,13 +40,13 @@ class Solution(object):
             write -= 1
         while read >= 0:
             if arr[read] == 0:
-                arr[write], arr[write - 1] = 0, 0
+                arr[write] = arr[write - 1] = 0
                 write -= 2
                 read -= 1
             else:
                 arr[write] = arr[read]
-                write -= 1
                 read -= 1
+                write -= 1
         return arr
 
 
