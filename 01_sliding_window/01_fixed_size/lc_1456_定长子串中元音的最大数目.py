@@ -13,10 +13,10 @@
 
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
-        vowel = ans = 0
-        for right, j in enumerate(s):
+        vowel, ans = 0, 0
+        for right, x in enumerate(s):
             left = right - k + 1
-            if j in "aeiou":
+            if x in "aeiou":
                 vowel += 1
             if left < 0:
                 continue

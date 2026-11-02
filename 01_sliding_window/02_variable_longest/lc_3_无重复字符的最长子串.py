@@ -17,11 +17,11 @@ import heapq
 
 class Solution(object):
     def lengthOfLongestSubstring(self, s: str) -> int:
-        ans, left = 0, 0
         d = defaultdict(int)
-        for right, j in enumerate(s):
-            d[j] += 1
-            while d[j] > 1:
+        left, ans = 0, 0
+        for right, x in enumerate(s):
+            d[x] += 1
+            while d[x] > 1:
                 d[s[left]] -= 1
                 left += 1
             ans = max(ans, right - left + 1)

@@ -24,15 +24,15 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
+        cur = 1
+        left, ans = 0, 0
         if k <= 1:
             return 0
-        ans, left, crt = 0, 0, 1
-        for right, j in enumerate(nums):
-            crt *= j
-            while crt >= k:
-                crt //= nums[left]
+        for right, x in enumerate(nums):
+            cur *= x
+            if cur >= k:
+                cur //= nums[left]
                 left += 1
-            # key
             ans += right - left + 1
         return ans
 
@@ -40,4 +40,4 @@ class Solution(object):
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
-    print()
+    print(solution.numSubarrayProductLessThanK(nums=[10, 5, 2, 6], k=100))

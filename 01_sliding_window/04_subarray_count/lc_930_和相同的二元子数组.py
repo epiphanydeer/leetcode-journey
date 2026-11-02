@@ -18,6 +18,19 @@ import heapq
 
 
 class Solution(object):
+    def atMost(self, nums, goal):
+        ans = left = cur = 0
+        n = len(nums)
+        if goal <= 0:  # 和 >= 0，所有子数组都满足
+            return n * (n + 1) // 2
+        for right, x in enumerate(nums):
+            cur += x
+            while cur >= goal:
+                cur -= nums[left]
+                left += 1
+            ans += left
+        return ans
+
     def numSubarraysWithSum(self, nums, goal):
         """
         :type nums: List[int]
@@ -25,22 +38,10 @@ class Solution(object):
         :rtype: int
         """
 
-        def atMost(k: int) -> int:
-            if k < 0:
-                return 0
-            left, ans, crt = 0, 0, 0
-            for right, j in enumerate(nums):
-                crt += j
-                while crt > k:
-                    crt -= nums[left]
-                    left += 1
-                ans += right - left + 1
-            return ans
-
-        return atMost(goal) - atMost(goal - 1)
+        return self.atMost(nums, goal) - self.atMost(nums, goal + 1)
 
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.numSubarraysWithSum(nums=[0, 0, 0, 0, 0], goal=0))
+    print(solution.numSubarraysWithSum(nums=[1, 0, 1, 0, 1], goal=2))
