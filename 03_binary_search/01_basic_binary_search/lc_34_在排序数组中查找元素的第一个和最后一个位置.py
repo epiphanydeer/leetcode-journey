@@ -37,11 +37,11 @@ class Solution(object):
         :rtype: List[int]
         """
         start = self.lower_bound(nums, target)
-        if start == len(nums) or nums[start] != target:
-            return [-1, -1]
-        else:
+        if start < len(nums) and nums[start] == target:
             end = self.lower_bound(nums, target + 1) - 1
             return [start, end]
+        else:
+            return [-1, -1]
 
 
 # 快速测试验证

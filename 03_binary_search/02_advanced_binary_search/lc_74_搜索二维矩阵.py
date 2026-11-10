@@ -25,7 +25,7 @@ import heapq
 class Solution(object):
     def lower_bound(self, matrix: list[int], target: int) -> int:
         m, n = len(matrix), len(matrix[0])
-        left, right = 0, m * n
+        left, right = 0, m * n - 1
         while left <= right:
             mid = (left + right) // 2
             if matrix[mid // n][mid % n] < target:
@@ -40,11 +40,11 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        start = self.lower_bound(matrix, target)
         m, n = len(matrix), len(matrix[0])
-        left = self.lower_bound(matrix, target)
-        if left == m * n:
+        if start == m * n:
             return False
-        return matrix[left // n][left % n] == target
+        return matrix[start // n][start % n] == target
 
 
 # 快速测试验证

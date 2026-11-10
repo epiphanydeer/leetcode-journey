@@ -25,12 +25,13 @@ class Solution(object):
         :rtype: int
         """
         cur = 1
+        nums.sort()
         left, ans = 0, 0
         if k <= 1:
             return 0
         for right, x in enumerate(nums):
             cur *= x
-            if cur >= k:
+            while cur >= k:
                 cur //= nums[left]
                 left += 1
             ans += right - left + 1

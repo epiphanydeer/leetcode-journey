@@ -18,7 +18,7 @@ import heapq
 
 
 class Solution(object):
-    def lower_bound(self, nums: List[int], target: int) -> int:
+    def lower_bound(self, nums: list[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         while left <= right:
             mid = (left + right) // 2

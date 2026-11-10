@@ -1,5 +1,5 @@
 # 154. 寻找旋转排序数组中的最小值 II
-'''
+"""
 已知一个长度为 n 的数组，预先按照升序排列，经由 1 到 n 次 旋转 后，得到输入数组。例如，原数组 nums = [0,1,4,4,5,6,7] 在变化后可能得到：
 
  若旋转 4 次，则可以得到 [4,5,6,7,0,1,4]
@@ -11,7 +11,10 @@
 给你一个可能存在 重复 元素值的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
 
 你必须尽可能减少整个过程的操作步骤。
-'''
+【解题思路】
+1. 还是和最后一个数字比较，只不过因为有重复的，所以如果相等了，right退一个
+2.在变right的时候考虑到自己也可能是最小值，所以需要right = mid，然后循坏需要改为left < right
+"""
 
 from typing import *
 from collections import *
@@ -21,13 +24,27 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def findMin(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] == nums[right]:
+                right -= 1
+            elif nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left]
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.findMin(nums=[3, 4, 5, 1, 2]))
+    print(solution.findMin(nums=[4, 5, 6, 7, 0, 1, 2]))

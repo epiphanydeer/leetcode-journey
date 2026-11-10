@@ -38,8 +38,8 @@ class Solution(object):
                 left = mid + 1
             else:
                 right = mid - 1
-        if nums[left] == target:
-            return left
+        if left < len(nums) and nums[left] == target:
+            return nums[left]
         else:
             return -1
 
@@ -48,4 +48,4 @@ class Solution(object):
 if __name__ == "__main__":
     solution = Solution()
     print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=9))
-    print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=2))
+    print(solution.search(nums=[-1, 0, 3, 5, 9, 12], target=13))

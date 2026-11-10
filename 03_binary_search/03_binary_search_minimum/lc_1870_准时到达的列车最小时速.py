@@ -1,5 +1,5 @@
 # 1870. 准时到达的列车最小时速
-'''
+"""
 给你一个浮点数 hour ，表示你到达办公室可用的总通勤时间。要到达办公室，你必须按给定次序乘坐 n 趟列车。另给你一个长度为 n 的整数数组 dist ，其中 dist[i] 表示第 i 趟列车的行驶距离（单位是千米）。
 
 每趟列车均只能在整点发车，所以你可能需要在两趟列车之间等待一段时间。
@@ -9,7 +9,10 @@
 返回能满足你在时限前到达办公室所要求全部列车的 最小正整数 时速（单位：千米每小时），如果无法准时到达，则返回 -1 。
 
 生成的测试用例保证答案不超过 107 ，且 hour 的 小数点后最多存在两位数字 。
-'''
+【解题思路】
+1. 前几个向上取整，最后一个取浮点数，答案单调，可以二分答案
+2. 最后的时间速度可以10^7，因为答案可以大于len(dist) - 1
+"""
 
 from typing import *
 from collections import *
@@ -19,6 +22,7 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def minSpeedOnTime(self, dist, hour):
         """
@@ -26,7 +30,31 @@ class Solution(object):
         :type hour: float
         :rtype: int
         """
+        if hour <= len(dist) - 1:
+            return -1
+
+        def check(mid: int) -> bool:
+            total = 0
+            for i in dist[:-1]:
+                total += (i + mid - 1) // mid
+            total += dist[-1] / mid
+            return total <= hour
+
+        left, right = 1, 10**7
+        ans = 0
+        while left <= right:
+            mid = (left + right) // 2
+            if check(mid):
+                ans = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        return ans
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.minSpeedOnTime(dist=[1, 3, 2], hour=6))
+    print(solution.minSpeedOnTime(dist=[1, 3, 2], hour=2.7))
+    print(solution.minSpeedOnTime(dist=[1, 3, 2], hour=1.9))

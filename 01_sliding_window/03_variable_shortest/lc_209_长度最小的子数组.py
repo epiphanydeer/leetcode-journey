@@ -22,15 +22,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        cur, left = 0, 0
+        if sum(nums) < target:
+            return 0
+        left, cur = 0, 0
         ans = inf
         for right, x in enumerate(nums):
             cur += x
-            if cur >= target:
+            while cur >= target:
                 ans = min(ans, right - left + 1)
                 cur -= nums[left]
                 left += 1
-        return ans if ans <= len(nums) else 0
+        return ans
 
 
 # 快速测试验证
