@@ -1,146 +1,15 @@
 # 3128. 直角三角形
-'''
+"""
 给你一个二维 boolean 矩阵 grid 。
 
 如果 grid 的 3 个元素的集合中，一个元素与另一个元素在 同一行，并且与第三个元素在 同一列，则该集合是一个 直角三角形。3 个元素 不必 彼此相邻。
 
 请你返回使用 grid 中的 3 个元素可以构建的 直角三角形 数目，且满足 3 个元素值 都 为 1 。
 
- 
-
-示例 1：
-
- 
- 
- 0
- 1
- 0
- 
- 
- 0
- 1
- 1
- 
- 
- 0
- 1
- 0
- 
- 
-
- 
- 
- 0
- 1
- 0
- 
- 
- 0
- 1
- 1
- 
- 
- 0
- 1
- 0
- 
- 
-
-输入：grid = [[0,1,0],[0,1,1],[0,1,0]]
-
-输出：2
-
-解释：
-
-有 2 个值为 1 的直角三角形。注意蓝色的那个 没有 组成直角三角形，因为 3 个元素在同一列。
-
-示例 2：
-
- 
- 
- 1
- 0
- 0
- 0
- 
- 
- 0
- 1
- 0
- 1
- 
- 
- 1
- 0
- 0
- 0
- 
- 
-
-输入：grid = [[1,0,0,0],[0,1,0,1],[1,0,0,0]]
-
-输出：0
-
-解释：
-
-没有值为 1 的直角三角形。注意蓝色的那个 没有 组成直角三角形。
-
-示例 3：
-
- 
- 
- 1
- 0
- 1
- 
- 
- 1
- 0
- 0
- 
- 
- 1
- 0
- 0
- 
- 
-
- 
- 
- 1
- 0
- 1
- 
- 
- 1
- 0
- 0
- 
- 
- 1
- 0
- 0
- 
- 
-
-输入：grid = [[1,0,1],[1,0,0],[1,0,0]]
-
-输出：2
-
-解释：
-
-有两个值为 1 的直角三角形。
-
- 
-
-提示：
-
- 1 <= grid.length <= 1000
-
- 1 <= grid[i].length <= 1000
-
- 0 <= grid[i][j] <= 1
-'''
+【解题思路】
+1. 统计每行的和和每列的和，之后抽1去找同行和同列是否有1
+2. zip(*grid)是先解开，然后zip一一对应，实现转置
+"""
 
 from typing import *
 from collections import *
@@ -150,13 +19,28 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def numberOfRightTriangles(self, grid):
         """
         :type grid: List[List[int]]
         :rtype: int
         """
+        row_cnt = [sum(i) for i in grid]
+        col_cnt = [sum(i) for i in zip(*grid)]
+        ans = 0
+        for row, x in enumerate(grid):
+            for col, y in enumerate(x):
+                if y:
+                    ans += (col_cnt[col] - 1) * (row_cnt[row] - 1)
+        return ans
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.numberOfRightTriangles(grid=[[0, 1, 0], [0, 1, 1], [0, 1, 0]]))
+    print(
+        solution.numberOfRightTriangles(grid=[[1, 0, 0, 0], [0, 1, 0, 1], [1, 0, 0, 0]])
+    )
+    print(solution.numberOfRightTriangles(grid=[[1, 0, 1], [1, 0, 0], [1, 0, 0]]))

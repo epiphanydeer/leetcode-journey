@@ -1,49 +1,13 @@
 # 3152. 特殊数组 II
-'''
+"""
 如果数组的每一对相邻元素都是两个奇偶性不同的数字，则该数组被认为是一个 特殊数组 。
 
 你有一个整数数组 nums 和一个二维整数矩阵 queries，对于 queries[i] = [fromi, toi]，请你帮助你检查 子数组 nums[fromi..toi] 是不是一个 特殊数组 。
 
 返回布尔数组 answer，如果 nums[fromi..toi] 是特殊数组，则 answer[i] 为 true ，否则，answer[i] 为 false 。
-
- 
-
-示例 1：
-
-输入：nums = [3,4,1,2,6], queries = [[0,4]]
-
-输出：[false]
-
-解释：
-
-子数组是 [3,4,1,2,6]。2 和 6 都是偶数。
-
-示例 2：
-
-输入：nums = [4,3,1,6], queries = [[0,2],[2,3]]
-
-输出：[false,true]
-
-解释：
-
- 子数组是 [4,3,1]。3 和 1 都是奇数。因此这个查询的答案是 false。
-
- 子数组是 [1,6]。只有一对：(1,6)，且包含了奇偶性不同的数字。因此这个查询的答案是 true。
-
- 
-
-提示：
-
- 1 <= nums.length <= 105
-
- 1 <= nums[i] <= 105
-
- 1 <= queries.length <= 105
-
- queries[i].length == 2
-
- 0 <= queries[i][0] <= queries[i][1] <= nums.length - 1
-'''
+【解题思路】
+1. 检查奇偶性，找断点，看差值是否为0
+"""
 
 from typing import *
 from collections import *
@@ -53,6 +17,7 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def isArraySpecial(self, nums, queries):
         """
@@ -60,7 +25,20 @@ class Solution(object):
         :type queries: List[List[int]]
         :rtype: List[bool]
         """
+        s = [0] * len(nums)
+        for idx, x in enumerate(nums[1:], 1):
+            if x % 2 == nums[idx - 1] % 2:
+                s[idx] += s[idx - 1] + 1
+            else:
+                s[idx] += s[idx - 1]
+        ans = []
+        for l, r in queries:
+            ans.append(s[r] - s[l] == 0)
+        return ans
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.isArraySpecial(nums=[3, 4, 1, 2, 6], queries=[[0, 4]]))
+    print(solution.isArraySpecial(nums=[4, 3, 1, 6], queries=[[0, 2], [2, 3]]))

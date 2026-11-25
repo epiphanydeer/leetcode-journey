@@ -1,5 +1,5 @@
 # 3583. 统计特殊三元组
-'''
+"""
 给你一个整数数组 nums。
 
 特殊三元组 定义为满足以下条件的下标三元组 (i, j, k)：
@@ -14,81 +14,10 @@
 
 由于答案可能非常大，请返回结果对 109 + 7 取余数后的值。
 
- 
-
-示例 1：
-
-输入： nums = [6,3,6]
-
-输出： 1
-
-解释：
-
-唯一的特殊三元组是 (i, j, k) = (0, 1, 2)，其中：
-
- nums[0] = 6, nums[1] = 3, nums[2] = 6
-
- nums[0] = nums[1] * 2 = 3 * 2 = 6
-
- nums[2] = nums[1] * 2 = 3 * 2 = 6
-
-示例 2：
-
-输入： nums = [0,1,0,0]
-
-输出： 1
-
-解释：
-
-唯一的特殊三元组是 (i, j, k) = (0, 2, 3)，其中：
-
- nums[0] = 0, nums[2] = 0, nums[3] = 0
-
- nums[0] = nums[2] * 2 = 0 * 2 = 0
-
- nums[3] = nums[2] * 2 = 0 * 2 = 0
-
-示例 3：
-
-输入： nums = [8,4,2,8,4]
-
-输出： 2
-
-解释：
-
-共有两个特殊三元组：
-
- (i, j, k) = (0, 1, 3)
-
- 
- nums[0] = 8, nums[1] = 4, nums[3] = 8
-
- nums[0] = nums[1] * 2 = 4 * 2 = 8
-
- nums[3] = nums[1] * 2 = 4 * 2 = 8
-
- 
- 
-
- (i, j, k) = (1, 2, 4)
- 
- nums[1] = 4, nums[2] = 2, nums[4] = 4
-
- nums[1] = nums[2] * 2 = 2 * 2 = 4
-
- nums[4] = nums[2] * 2 = 2 * 2 = 4
-
- 
- 
-
- 
-
-提示：
-
- 3 <= n == nums.length <= 105
-
- 0 <= nums[i] <= 105
-'''
+【解题思路】
+1. 三个变量，维护中间，初始的时候右框全满，拿出一个，左框空着去比，然后塞入左框
+2. 取余，质数
+"""
 
 from typing import *
 from collections import *
@@ -98,13 +27,27 @@ from math import *
 import bisect
 import heapq
 
+
 class Solution(object):
     def specialTriplets(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+        MOD = 1_000_000_007
+        suf = Counter(nums)
+        ans = 0
+        pre = defaultdict(int)
+        for idx, x in enumerate(nums):
+            suf[x] -= 1
+            ans += pre[x * 2] * suf[x * 2]
+            pre[x] += 1
+        return ans % MOD
+
 
 # 快速测试验证
 if __name__ == "__main__":
     solution = Solution()
+    print(solution.specialTriplets(nums=[6, 3, 6]))
+    print(solution.specialTriplets(nums=[0, 1, 0, 0]))
+    print(solution.specialTriplets(nums=[8, 4, 2, 8, 4]))
